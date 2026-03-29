@@ -1,0 +1,156 @@
+# ── Tolstoy.life — Shared Sources Library ────────────────────
+# All sources referenced across work records are defined here.
+# Each source has a unique `id` used in `fieldSources` blocks.
+# Types: book · article · archival · database · primary
+
+sources:
+
+  # ── Books & Articles ───────────────────────────────────────
+
+  - id: "jubilee-edition"
+    type: "book"
+    author: "Leo Nikolaevich Tolstoy"
+    title: "Полное собрание сочинений (Jubilee Edition)"
+    titleEn: "Complete Collected Works"
+    publisher: "Goslitizdat"
+    publisherCity: "Moscow"
+    year: "1928–1964"
+    volumes: 90
+    language: "ru"
+    url: ""
+    notes: >
+      The authoritative 90-volume collected works, commissioned by the Soviet
+      state. Contains texts, variants, diaries, letters, and scholarly apparatus.
+      Standard reference for all Tolstoy textual scholarship.
+
+  - id: "maude-biography-vol1"
+    type: "book"
+    author: "Maude, Aylmer"
+    title: "The Life of Tolstoy: First Fifty Years"
+    publisher: "Constable"
+    publisherCity: "London"
+    year: 1908
+    language: "en"
+    url: ""
+    notes: "Authoritative English-language biography. Maude knew Tolstoy personally."
+
+  - id: "maude-biography-vol2"
+    type: "book"
+    author: "Maude, Aylmer"
+    title: "The Life of Tolstoy: Later Years"
+    publisher: "Constable"
+    publisherCity: "London"
+    year: 1910
+    language: "en"
+    url: ""
+    notes: ""
+
+  - id: "eikhenbaum-tolstoy-70s"
+    type: "book"
+    author: "Eikhenbaum, Boris"
+    title: "Tolstoy in the Seventies"
+    publisher: "Ardis"
+    publisherCity: "Ann Arbor"
+    year: 1982
+    language: "en"
+    url: ""
+    notes: "English translation of the Russian original (1960)."
+
+  # ── Archival ───────────────────────────────────────────────
+
+  - id: "tolstoy-museum-moscow"
+    type: "archival"
+    repository: "State Museum of Leo Tolstoy (Государственный музей Л.Н. Толстого)"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    fond: ""
+    opis: ""
+    delo: ""
+    callNumber: ""
+    description: >
+      The primary repository for Tolstoy manuscripts, transcriptions, personal
+      effects, and archival materials.
+    url: "https://tolstoymuseum.ru"
+    notes: ""
+
+  - id: "rgb-tolstoy-fond"
+    type: "archival"
+    repository: "Russian State Library (Российская государственная библиотека)"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    fond: "Fond 93 (Tolstoy)"
+    opis: ""
+    delo: ""
+    callNumber: ""
+    description: "Tolstoy fond at the RGB. Contains manuscripts and correspondence."
+    url: "https://rsl.ru"
+    notes: ""
+
+  - id: "yasnaya-polyana-archive"
+    type: "archival"
+    repository: "Yasnaya Polyana Museum-Estate"
+    repositoryCity: "Yasnaya Polyana"
+    repositoryCountry: "Russia"
+    fond: ""
+    opis: ""
+    delo: ""
+    callNumber: ""
+    description: "Archive at Tolstoy's home estate."
+    url: "https://ypmuseum.ru"
+    notes: ""
+
+  # ── Databases & Websites ───────────────────────────────────
+
+  - id: "wikidata"
+    type: "database"
+    name: "Wikidata"
+    url: "https://www.wikidata.org"
+    dateAccessed: ""
+    notes: "Structured data for identifiers (QIDs). Always note dateAccessed."
+
+  - id: "open-library"
+    type: "database"
+    name: "Open Library"
+    url: "https://openlibrary.org"
+    dateAccessed: ""
+    notes: "Open Library work and edition IDs."
+
+  - id: "project-gutenberg"
+    type: "database"
+    name: "Project Gutenberg"
+    url: "https://www.gutenberg.org"
+    dateAccessed: ""
+    notes: "Free digital texts. Note specific text IDs in fieldSources."
+
+  - id: "internet-archive"
+    type: "database"
+    name: "Internet Archive"
+    url: "https://archive.org"
+    dateAccessed: ""
+    notes: "Digitised editions and scans."
+
+  # ── Primary Sources ────────────────────────────────────────
+
+  - id: "sophia-diary"
+    type: "primary"
+    author: "Sophia Andreevna Tolstaya"
+    title: "Дневники (Diaries)"
+    repository: "State Museum of Leo Tolstoy"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    repositoryCallNumber: ""
+    description: >
+      Sophia Tolstaya's personal diaries, covering daily life at Yasnaya
+      Polyana and her observations of Tolstoy's writing process.
+    notes: "Published edition: Tolstaya, S.A. Дневники, 2 vols. Moscow, 1978."
+
+  - id: "tolstoy-diaries"
+    type: "primary"
+    author: "Leo Nikolaevich Tolstoy"
+    title: "Дневники (Diaries)"
+    repository: "State Museum of Leo Tolstoy"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    repositoryCallNumber: ""
+    description: "Tolstoy's personal diaries. Published in Jubilee Edition vols. 46–58."
+    notes: ""

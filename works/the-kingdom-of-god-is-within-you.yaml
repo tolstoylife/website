@@ -1,0 +1,273 @@
+# ── Core Identity ────────────────────────────────────────────
+id: "the-kingdom-of-god-is-within-you"
+titleEn: "The Kingdom of God Is Within You"
+titleRu: "Царство Божие внутри вас"
+titleAlternatives:
+  - title: "Das Reich Gottes ist in euch"
+    type: "translation"
+    language: "de"
+  - title: "Le Royaume de Dieu est en vous"
+    type: "translation"
+    language: "fr"
+
+# ── Type & Genre ─────────────────────────────────────────────
+genre: "philosophical"
+language: "ru"
+completionStatus: "complete"
+publishedDuringLifetime: true
+publishedInRussiaDuringLifetime: false    # Banned in Russia; never legally published there during Tolstoy's lifetime
+
+# ── Chronology ───────────────────────────────────────────────
+# NOTE: Exact start date needs verification — approx. 1890
+dateWritingStarted: "1890"
+dateWritingStartedOldStyle: "1890"
+dateWritingStartedApproximate: true
+timeWritingStarted: ""
+# NOTE: Exact completion date needs verification — approx. May 1893
+dateWritingCompleted: "1893-05"
+dateWritingCompletedOldStyle: "1893-04"
+dateWritingCompletedApproximate: true
+timeWritingCompleted: ""
+# First published in German translation, Leipzig, 1894
+# Banned by Russian censors — not published in Russia during Tolstoy's lifetime
+dateFirstPublished: "1894"
+dateFirstPublishedOldStyle: "1894"
+dateFirstPublishedApproximate: true
+firstPublishedVenue: "Wilhelm Friedrich Verlag, Leipzig"
+firstPublishedVenueType: "book"
+# First legal Russian publication — after the 1905 reforms lifted the ban
+dateFirstPublishedInRussia: "1906"
+dateFirstPublishedInRussiaOldStyle: "1906"
+dateFirstPublishedInRussiaApproximate: true
+firstPublishedInRussiaVenue: ""         # Specific Russian publisher needs archival verification
+firstPublishedInRussiaVenueType: "book"
+
+# ── Authoring Locations ──────────────────────────────────────
+# NOTE: Exact locations and date ranges need archival verification
+authoringLocations:
+  - country: "Russia"
+    region: "Tula Oblast"
+    city: "Yasnaya Polyana"
+    estate: "Yasnaya Polyana Estate"
+    building: "Main House"
+    room: "Study"
+    coordinates:
+      lat: 54.0667
+      lng: 37.5167
+    dateFrom: "1890"
+    dateFromOldStyle: "1890"
+    dateTo: "1893"
+    dateToOldStyle: "1893"
+    notes: "Primary location. Dates approximate — needs archival verification."
+  - country: "Russia"
+    region: "Moscow"
+    city: "Moscow"
+    estate: ""
+    building: "Tolstoy House, Khamovniki"
+    room: "Study"
+    coordinates:
+      lat: 55.7290
+      lng: 37.5720
+    dateFrom: ""
+    dateFromOldStyle: ""
+    dateTo: ""
+    dateToOldStyle: ""
+    notes: "Likely used during winter periods. Needs verification."
+
+# ── Manuscripts ──────────────────────────────────────────────
+# NOTE: Full manuscript details need archival verification
+manuscripts:
+  - draftId: "ms-01"
+    draftNumber: 1
+    draftLabel: "First draft"
+    dateCreated: "1890"
+    dateCreatedOldStyle: "1890"
+    dateCreatedApproximate: true
+    timeCreated: ""
+    numberOfFolios: 0       # needs verification
+    condition: ""           # needs verification
+    currentRepository: "State Museum of Leo Tolstoy"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    repositoryCallNumber: ""  # needs verification
+    scans:
+      - url: ""
+        sourceInstitution: ""
+        license: ""
+        credit: ""
+        dateAccessed: ""
+    writingMaterials:
+      pen: ""     # needs research
+      ink: ""     # needs research
+      paper: ""   # needs research
+      notes: ""
+
+# ── Transcriptions ───────────────────────────────────────────
+# NOTE: Transcription details need archival verification
+transcriptions:
+  - transcriberId: "sophia-tolstaya"
+    transcriberName: "Sophia Andreevna Tolstaya"
+    relationToAuthor: "wife"
+    dateTranscribed: ""
+    dateTranscribedOldStyle: ""
+    dateTranscribedApproximate: true
+    timeTranscribed: ""
+    currentRepository: "State Museum of Leo Tolstoy"
+    repositoryCity: "Moscow"
+    repositoryCountry: "Russia"
+    repositoryCallNumber: ""
+    scans:
+      - url: ""
+        sourceInstitution: ""
+        license: ""
+        credit: ""
+        dateAccessed: ""
+    notes: "Transcriber needs verification — may include other transcribers."
+
+# ── Bibliographic ────────────────────────────────────────────
+dedicatedToEn: ""
+dedicatedToRu: ""
+epigraph: ""
+epigraphAuthor: ""
+epigraphSource: ""
+themes:
+  - "nonresistance to evil"
+  - "Christian anarchism"
+  - "pacifism"
+  - "civil disobedience"
+  - "critique of the state"
+  - "critique of the church"
+subjectHeadings:
+  - "Christianity and politics"
+  - "Nonviolence -- Religious aspects -- Christianity"
+  - "Government, Resistance to -- Moral and ethical aspects"
+  - "Anarchism"
+synopsis: >
+  A philosophical and religious treatise in which Tolstoy argues that true
+  Christianity demands nonresistance to evil by force. He critiques the Russian
+  Orthodox Church, the state, and military service as fundamentally incompatible
+  with Christ's teachings. The work was a major influence on Gandhi's concept
+  of nonviolent resistance (satyagraha).
+bans:
+  - banningAuthority: "Main Administration for Press Affairs (Главное управление по делам печати)"
+    authorityType: "imperial-state"
+    jurisdiction: "Russia"
+    scope: "pre-publication-rejected"
+    banDate: "1893"
+    banDateOldStyle: "1893"
+    banDateApproximate: true
+    banLiftedDate: "1905"
+    banLiftedDateOldStyle: "1905"
+    banLiftedDateApproximate: true
+    notes: >
+      Rejected before publication. Russian copies circulated in samizdat and
+      via Chertkov's Free Word Press (England). Legally published in Russia
+      only after the October Manifesto (1905) relaxed censorship.
+  - banningAuthority: "Holy Synod of the Russian Orthodox Church"
+    authorityType: "holy-synod"
+    jurisdiction: "Russia"
+    scope: "complete-ban"
+    banDate: ""
+    banDateOldStyle: ""
+    banDateApproximate: true
+    banLiftedDate: ""
+    banLiftedDateOldStyle: ""
+    banLiftedDateApproximate: false
+    notes: >
+      Ecclesiastical suppression enforced independently of state censorship.
+      The 1901 excommunication decree (February 24, 1901) intensified the
+      church's opposition to this work specifically. Ban never formally lifted.
+samizdatCirculation: true     # Circulated in handwritten copies and lithographed editions within Russia
+excommunicationRelated: true  # Cited as a factor in the 1901 Holy Synod excommunication
+censoredVersionExists: false  # Work was either banned entirely or published uncensored abroad; no known cut Russian edition
+censoredVersionNotes: ""
+censorshipNotes: >
+  This work exemplifies Tolstoy's strategy of foreign-first publication to
+  circumvent Imperial censorship. Civil censors and the Holy Synod acted
+  independently but both suppressed the work. Chertkov's Free Word Press
+  (England) distributed Russian-language copies that were smuggled back into
+  Russia. The 1901 excommunication further cemented ecclesiastical opposition.
+wordCount: 0    # needs verification
+relatedWorks:
+  - id: "what-i-believe"
+    relationshipType: "companion"
+  - id: "the-law-of-violence-and-the-law-of-love"
+    relationshipType: "companion"
+notes: >
+  Highly influential on Mahatma Gandhi, who wrote to Tolstoy after reading it.
+  This correspondence led to the Tolstoy-Gandhi letters (1909–1910).
+
+# ── Identifiers ──────────────────────────────────────────────
+identifiers:
+  wikidata: "Q928001"         # needs verification
+  openLibrary: ""             # needs verification
+  goodreads: ""               # needs verification
+  librarything: ""            # needs verification
+  gutenberg:
+    - "4602"                  # needs verification
+  internetArchive: []         # needs verification
+  lccn: ""                    # needs verification
+  oclc: []                    # needs verification
+  viaf: ""
+  bnf: ""
+  jubileeEdition:
+    volumes: "28"
+    notes: "Полное собрание сочинений, vol. 28"
+
+# ── Field Sources ─────────────────────────────────────────────
+# References source IDs from sources.yaml
+fieldSources:
+  titleRu:
+    - sourceId: "jubilee-edition"
+      volume: "28"
+      page: ""
+      quote: ""
+      notes: ""
+  dateWritingStarted:
+    - sourceId: "jubilee-edition"
+      volume: "28"
+      page: ""
+      quote: ""
+      notes: "Approximate year only. Exact start date needs archival verification."
+  dateWritingCompleted:
+    - sourceId: "jubilee-edition"
+      volume: "28"
+      page: ""
+      quote: ""
+      notes: "Approximate month only. Needs archival verification."
+  dateFirstPublished:
+    - sourceId: "maude-biography-vol2"
+      page: ""
+      quote: ""
+      notes: "First published in German translation, Leipzig, 1894."
+  firstPublishedVenue:
+    - sourceId: "maude-biography-vol2"
+      page: ""
+      quote: ""
+      notes: ""
+  banStatus.banned:
+    - sourceId: "maude-biography-vol2"
+      page: ""
+      quote: ""
+      notes: ""
+  banStatus.banLiftedDate:
+    - sourceId: "maude-biography-vol2"
+      page: ""
+      quote: ""
+      notes: "Approximate — 1905 revolution relaxed many censorship restrictions."
+  identifiers.wikidata:
+    - sourceId: "wikidata"
+      page: ""
+      quote: ""
+      notes: "Q928001 — needs verification."
+  identifiers.jubileeEdition.volumes:
+    - sourceId: "jubilee-edition"
+      volume: "28"
+      page: ""
+      quote: ""
+      notes: ""
+  manuscripts[0].currentRepository:
+    - sourceId: "tolstoy-museum-moscow"
+      page: ""
+      quote: ""
+      notes: "Assumed primary repository — needs archival verification."
