@@ -1,7 +1,7 @@
 {
-  "name": "jedee",
-  "version": "0.8.0",
-  "description": "Personal website of Johan Edlund.",
+  "name": "tolstoy-life",
+  "version": "0.1.0",
+  "description": "An encyclopedic reference covering the life and works of Leo Tolstoy.",
   "author": "Johan Edlund",
   "license": "Unlicense",
   "type": "module",
@@ -27,7 +27,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pjedlund/jedee.git"
+    "url": "https://github.com/tolstoylife/tolstoy-life.git"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",

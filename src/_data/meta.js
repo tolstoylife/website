@@ -1,25 +1,25 @@
 export const url = process.env.URL || 'http://localhost:8080';
-export const siteName = 'Johan Edlund';
-export const siteDescription = 'Personal site of Johan Edlund';
+export const siteName = 'tolstoy.life';
+export const siteDescription = 'An encyclopedic reference covering the life and works of Leo Tolstoy.';
 // Extract domain from `url`
 export const domain = new URL(url).hostname;
-export const siteType = 'Person'; // schema
+export const siteType = 'WebSite'; // schema
 export const locale = 'en_EN';
 export const lang = 'en';
 export const skipContent = 'Skip to content';
 export const author = {
-  name: 'Johan Edlund', // i.e. Lene Saile - page / blog author's name. Must be set.
-  avatar: '/avatar.webp', // path to the author's avatar.
-  email: 'me@johanedlund.se', // i.e. hola@lenesaile.com - email of the author
-  website: 'https://www.johanedlund.se', // i.e. https.://www.lenesaile.com - the personal site of the author
-  fediverse: '@pjedlund@mastodon.social' // used for highlighting journalism on the fediverse. Can be Mastodon, Flipboard, Threads, WordPress (with the ActivityPub plugin installed), PeerTube, Pixelfed, etc. https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
+  name: 'tolstoy.life',
+  avatar: '',
+  email: '',
+  website: 'https://tolstoy.life',
+  fediverse: ''
 };
 export const creator = {
-  name: 'Johan Edlund', // i.e. Lene Saile - creator's (developer) name.
-  email: 'me@johanedlund.se',
+  name: 'Johan Edlund',
+  email: '',
   website: 'https://www.johanedlund.se',
-  mastodon: 'https://mastodon.social/@pjedlund',
-  x: 'https://x.com/pjedlund'
+  mastodon: '',
+  x: ''
 };
 export const pathToSvgLogo = 'src/assets/svg/misc/logo.svg'; // used for favicon generation
 //Color Hunt Palette f4f4f2e8e8e8bbbfca495464.png
@@ -28,11 +28,11 @@ export const themeLight = '#F4F4F2'; // used for meta tag theme-color, if light 
 export const themeDark = '#bbbfca'; // used for meta tag theme-color, if dark colors are prefered. best use value set for dark bg
 export const opengraph_default = '/assets/images/template/opengraph-default.jpg'; // fallback/default meta image
 export const opengraph_default_alt =
-  "Visible content: An Eleventy starter with CUBE CSS, Cube CSS, Every Layout, Design Tokens and Tailwind for uitility classes. A workflow for building modern and resilient websites, introduced by Andy Bell's project buildexcellentwebsit.es"; // alt text for default meta image"
+  'tolstoy.life — An encyclopedic reference covering the life and works of Leo Tolstoy.';
 export const blog = {
   // RSS feed
-  name: 'Johan Edlund',
-  description: 'Jesus Christ is the truth and the way.',
+  name: 'tolstoy.life',
+  description: 'An encyclopedic reference covering the life and works of Leo Tolstoy.',
   // feed links are looped over in the head. You may add more to the array.
   feedLinks: [{
       title: 'Atom Feed',
@@ -91,7 +91,7 @@ export const greenweb = {
 export const tests = {
   pa11y: {
     // keep customPaths empty if you want to test all pages
-    customPaths: ['/', '/about/', '/articles/', '/styleguide/'],
+    customPaths: ['/', '/about/'],
     globalIgnore: []
   }
 };

@@ -1,6 +1,5 @@
-# jedee
+# tolstoy.life
 
-Personal website using [Eleventy](https://www.11ty.dev) and [Eleventy Excellent](https://github.com/madrilene/eleventy-excellent).
+An encyclopedic reference covering the life and works of Leo Tolstoy.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/10936f8d-3b76-4690-b8e3-64a14e524eb8/deploy-status)](https://app.netlify.com/projects/jedee/deploys)
-
+Built with [Eleventy](https://www.11ty.dev) using the [Eleventy Excellent](https://github.com/madrilene/eleventy-excellent) starter.
