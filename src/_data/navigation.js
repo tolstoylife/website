@@ -1,10 +1,20 @@
 export default {
-  top: [{
+  top: [
+    {
+      text: 'Works',
+      url: '/works/'
+    },
+    {
+      text: 'Wiki',
+      url: '/wiki/'
+    },
+    {
       text: 'About',
       url: '/about/'
     }
   ],
-  bottom: [{
+  bottom: [
+    {
       text: 'Accessibility',
       url: '/accessibility/'
     }
