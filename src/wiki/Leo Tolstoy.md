@@ -24,18 +24,6 @@ roles:
   - moral philosopher
   - pacifist
 relationToTolstoy: self
-eventDate: ""
-eventDateOldStyle: ""
-eventDateApproximate: false
-eventDateEnd: ""
-eventDateEndOldStyle: ""
-eventDateEndApproximate: false
-eventLocation: ""
-country: ""
-region: ""
-city: ""
-coordinates: 
-
 relatedWorks: 
   -
     id: anna-karenina

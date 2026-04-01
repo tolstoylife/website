@@ -448,6 +448,20 @@ function transformWikiRow(row) {
     }
   }
 
+  // Strip fields that don't apply to this entity type — they'd only add noise
+  const PERSON_ONLY = new Set(['birthDate','birthDateOldStyle','birthDateApproximate','deathDate','deathDateOldStyle','deathDateApproximate','birthPlace','nationality','roles','relationToTolstoy']);
+  const EVENT_ONLY  = new Set(['eventDate','eventDateOldStyle','eventDateApproximate','eventDateEnd','eventDateEndOldStyle','eventDateEndApproximate','eventLocation']);
+  const PLACE_ONLY  = new Set(['country','region','city','coordinates']);
+
+  const type = out.type;
+  for (const key of Object.keys(out)) {
+    if (type === 'person' && (EVENT_ONLY.has(key) || PLACE_ONLY.has(key))) delete out[key];
+    if (type === 'event'  && (PERSON_ONLY.has(key) || PLACE_ONLY.has(key))) delete out[key];
+    if (type === 'place'  && (PERSON_ONLY.has(key) || EVENT_ONLY.has(key))) delete out[key];
+    // Also drop empty JSONB objects (e.g. coordinates: {} on non-place records)
+    if (out[key] && typeof out[key] === 'object' && !Array.isArray(out[key]) && Object.keys(out[key]).length === 0) delete out[key];
+  }
+
   // Canonical field order matching the wiki schema
   const ORDERED_KEYS = [
     'id', 'recordStatus', 'titleEn', 'titleRu', 'type', 'description',
