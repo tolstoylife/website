@@ -16,6 +16,9 @@ src/_includes/scripts
 # Claude
 .claude
 
+# Obsidian
+.obsidian/
+
 # Editor configs mm
 .nova
 .vscode

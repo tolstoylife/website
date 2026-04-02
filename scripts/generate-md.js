@@ -174,8 +174,10 @@ const SOURCES = [
   {
     table: 'works',
     dir: WORKS_SRC_DIR,
-    // Filename: use titleEn if available, otherwise id. Matches existing files like "Anna Karenina.md".
-    filename: (row) => `${row.title_en || row.id}.md`,
+    // Each work gets its own subfolder named by id (slug).
+    // The .md file inside uses the English title so Obsidian wikilinks resolve correctly.
+    // e.g. src/works/anna-karenina/Anna Karenina.md
+    filename: (row) => `${row.id}/${row.title_en || row.id}.md`,
   },
   {
     table: 'wiki_articles',

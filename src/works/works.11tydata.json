@@ -1,4 +1,5 @@
 {
   "layout": "work",
-  "tags": ["work"]
+  "tags": ["work"],
+  "permalink": "/works/{{ id }}/"
 }
