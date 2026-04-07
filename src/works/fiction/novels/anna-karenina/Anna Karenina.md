@@ -21,6 +21,8 @@ titleAlternatives:
     title: A Young Lady's Story
     type: working
     language: ru
+mainCategory: Fiction
+subcategory: Novels
 genre: novel
 language: ru
 completionStatus: complete
@@ -220,4 +222,3 @@ fieldSources:
 
 <!-- PROSE — edit freely in Obsidian -->
 
-*Anna Karenina* is a novel by [[Leo Tolstoy]], first published in book form in 1878. Widely considered one of the greatest novels ever written, it explores themes of love, jealousy, family, marriage, and society in nineteenth-century Russia.

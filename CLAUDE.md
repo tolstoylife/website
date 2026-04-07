@@ -1,77 +1,36 @@
-# CLAUDE.md — tolstoy.life
+# CLAUDE.md — tolstoy-life
 
-A progressive web app (PWA) and e-reader about the life and works of Leo Tolstoy (LT).
+The front-end PWA, e-reader, and Obsidian vault for tolstoy.life, built with Eleventy.
 
-The app has these main functions:
-
-1. A **wiki** using Obsidian markdown with wikilinks covering all information relating to LT — people, events, places, context.
-2. A **works** section as a complete bibliography of LT. Each work has its own folder and is a git repo that anyone can fork and suggest changes to. An overview markdown file lists all facts about the work and available editions. At least one English translation of each work should be added; each edition is converted to Obsidian markdown file(s). For novels and long-form text, a separate markdown file per chapter is preferred.
-3. **My library** — users can add editions to a personal library that the PWA caches on-device for offline reading.
-4. An **e-reader** view. Clicking an edition adds it to the library in the background and opens a focus-mode reading view. The reader supports toggling wikilinks, footnotes, and other preferences. A Table of Contents lets users navigate chapters.
-
-In addition to these core sections, the site has **posts** (blog/news) and **pages** (about, legal, etc.).
+> **See also:** `../CLAUDE.md` for the shared mission, vocabulary, data flow, wiki operations model, schema reference, and content accuracy standards that apply across all projects in this folder.
 
 ---
 
-## Project overview
+## What this project does
 
+A progressive web app (PWA) and e-reader covering the life and works of Leo Tolstoy. Four core sections:
+
+1. **Wiki** — Obsidian markdown articles with wikilinks covering people, events, places, and concepts. Note: wiki articles cover entities — *not* works. There is no separate wiki article for *Anna Karenina*; the work's own overview file is the canonical article for it.
+2. **Works** — complete bibliography. Each work has an overview page (frontmatter + prose) inside a named folder, with an optional sidecar `.data.yaml` for deep scholarly metadata. Long-form works also have a `text/` subfolder containing one file per chapter.
+3. **My Library** — users add editions to a personal library cached on-device for offline reading (`IndexedDB`, no backend).
+4. **E-reader** — focus-mode reading view with togglable wikilinks, footnotes, and a chapter Table of Contents.
+
+Plus **posts** (blog/news) and **pages** (about, legal, accessibility).
+
+---
+
+## Stack
+
+**Eleventy (11ty) · Obsidian · Vanilla HTML/CSS/JS**
 **Domain:** tolstoy.life
-**Stack:** Eleventy (11ty) · Obsidian · Supabase (PostgreSQL) · Vanilla HTML/CSS/JS
-**Purpose:** PWA e-reader and encyclopedic wiki covering Tolstoy's biography, works, manuscripts, transcriptions, and related scholarly identifiers.
+**Deployed on:** Netlify (builds from committed `.md` files — no database, no network calls at build time)
 
 ---
 
-## Data architecture
-
-**Supabase is the single source of truth for all structured metadata.** A `generate-md.js` script (run via `npm run db:pull`) fetches rows from Supabase and writes YAML frontmatter into `.md` files in `src/`. Prose content is authored separately in Obsidian and preserved across regeneration cycles.
-
-### .md file zones
-
-Every generated file has two zones:
-
-```md
----
-# GENERATED — do not edit above this line
-id: anna-karenina
-titleEn: Anna Karenina
-# ...all schema fields...
----
-
-<!-- PROSE — edit freely in Obsidian -->
-
-Prose body with [[wikilinks]] here.
-```
-
-The generation script replaces only the frontmatter block. The prose body is never touched.
-
-**Rule:** Never hand-edit YAML frontmatter in `src/wiki/` or `src/works/` files. Edit metadata in Supabase, then run `npm run db:pull`.
-
-### Obsidian vault
-
-`src/` is the Obsidian vault. Obsidian opens the `src/` directory directly. Wikilinks, backlinks, and graph view work against the generated `.md` files in `src/wiki/` and `src/works/`.
-
----
-
-## Commands
-
-```bash
-# Development
-npm start                # Eleventy dev server
-
-# Build
-npm run build            # Clean + production build
-
-# Database → markdown sync
-npm run db:pull          # Fetch from Supabase, regenerate .md frontmatter
-npm run db:pull:dry      # Preview what would change without writing files
-```
-
----
-
-## Project architecture
+## Project structure
 
 ```
-tolstoy.life/
+tolstoy-life/
 ├── src/                          # Obsidian vault root + Eleventy input
 │   ├── .obsidian/                # Obsidian config (do not edit manually)
 │   ├── _config/                  # Eleventy config modules
@@ -94,77 +53,122 @@ tolstoy.life/
 │   ├── common/                   # System files: feeds, sitemap, robots, PWA manifest
 │   ├── pages/                    # Static pages (about, legal, accessibility, etc.)
 │   ├── posts/                    # Blog / news posts
-│   ├── wiki/                     # Wiki articles (people, events, places)
-│   │   └── Leo Tolstoy.md        # Generated frontmatter + Obsidian prose
-│   └── works/                    # Work overview pages (generated frontmatter + prose)
-│       └── Anna Karenina.md
-├── works/                        # Rich YAML schema source files (input to db:pull)
-│   └── the-kingdom-of-god-is-within-you.yaml
-├── scripts/                      # Build scripts (planned: generate-md.js)
-├── eleventy.config.js            # Eleventy config entry point
-├── tolstoy-works-schema.md       # Canonical schema reference (v5)
-├── sources.yaml                  # Controlled sources library
-└── CLAUDE.md
+│   ├── research/                 # LLM Wiki operational files + staging area
+│   │   ├── index.md              # Catalog of all wiki + works pages (LLM navigation)
+│   │   ├── log.md                # Chronological record of ingest/query/lint operations
+│   │   ├── sources/              # Source cards — .md stubs for each major source (wikilink-able)
+│   │   └── ...                   # Clippings, notes, extracted passages (staging)
+│   ├── wiki/                     # Wiki articles (people, events, places, concepts)
+│   └── works/                    # Work folders: [Title].md overview + sidecar + text/
+├── tolstoy-works-schema.md       # Canonical works metadata schema (v5)
+├── wiki-schema.md                # Wiki article schema (page types, frontmatter, operations)
+├── eleventy.config.js
+└── CLAUDE.md                     # This file
+```
+
+---
+
+## Data architecture
+
+**Single source of truth:** the Obsidian vault (`src/`). All metadata lives in YAML frontmatter within `.md` files and companion `.data.yaml` sidecars. No external database.
+
+Claude maintains the vault directly during the R&D phase — reading sources, writing and updating pages, maintaining cross-references. Johan reviews changes in Obsidian and git. When the project goes live, Claude shifts to a PR workflow (changes proposed on a branch, merged after review).
+
+### .md file structure
+
+Work overview files (`src/works/.../Anna Karenina.md`) have frontmatter and prose:
+
+```md
+---
+id: anna-karenina
+recordStatus: draft
+titleEn: Anna Karenina
+titleRu: Анна Каренина
+genre: novel
+language: ru
+completionStatus: complete
+# ...core schema fields...
+---
+
+Factual prose about composition, publication history, reception, etc.
+All claims cite a verified primary source. [[wikilinks]] to people, places, events.
+```
+
+The `---` delimiters separate frontmatter from prose. No zone markers needed — the boundary is the closing `---`.
+
+Deep scholarly metadata (manuscripts, transcriptions, bans, fieldSources) lives in a **sidecar file**:
+
+```
+anna-karenina/
+├── Anna Karenina.md          ← core frontmatter + prose
+└── anna-karenina.data.yaml   ← full schema v5 deep metadata
+```
+
+Source text files (`src/works/.../text/Part 1, Chapter 1.md`) have a TEXT zone:
+
+```md
+---
+title: Part 1, Chapter 1
+work: anna-karenina
+part: 1
+chapter: 1
+---
+
+<!-- TEXT — source text, do not modify -->
+
+The full text of the chapter with [[wikilinks]] woven in.
+```
+
+Wiki article files (`src/wiki/Sophia Tolstaya.md`) follow the templates in `wiki-schema.md`.
+
+**Rules:**
+- Frontmatter is authored by Claude based on primary sources. During R&D, Claude writes directly. In production, changes come via PR.
+- The TEXT zone in source text files is never touched by wiki maintenance operations.
+- All prose must cite primary sources. No unattributed claims, no literary interpretation.
+
+### Sidecar convention
+
+The sidecar `[id].data.yaml` file holds the full schema v5 metadata that would make frontmatter unwieldy: manuscript records, transcription details, ban histories, scan references, and fieldSources attribution. Eleventy consumes it via the data cascade (Eleventy automatically merges `*.data.yaml` files in the same directory with the template data).
+
+Start with frontmatter only. Add the sidecar when a work has enough deep metadata to warrant it. Not every work needs one.
+
+### Work file naming
+
+Work overview files use human-readable title-case names matching the work title (e.g. `Anna Karenina.md`). This is required for Obsidian wikilinks to resolve correctly — `[[Anna Karenina]]` must find exactly one file. Clean URLs are handled by the `permalink` in `works.11tydata.json`, derived from the `id` slug, not the filename.
+
+The text landing file for a work is named `[Title] — Text.md` (em-dash, not hyphen) to avoid wikilink collision with the overview file. Chapter files use title-case part and chapter names: `Part 1, Chapter 1.md`.
+
+### Eleventy ignores
+
+`src/research/` is excluded from Eleventy via `.eleventyignore` — the index, log, and staging materials must never generate pages. If adding other vault-only folders in future, add them to `.eleventyignore` as well.
+
+### Obsidian vault
+
+`src/` is the Obsidian vault. Open `src/` directly in Obsidian. Wikilinks, backlinks, and graph view work against all `.md` files in `wiki/`, `works/`, and `research/`.
+
+---
+
+## Commands
+
+```bash
+npm start            # Eleventy dev server
+npm run build        # Clean + production build
 ```
 
 ---
 
 ## Build pipeline
 
-`db:pull` and `npm run build` are intentionally separate and must stay that way.
-
-**Why:** `npm run build` must work purely from the committed `.md` files in git — no network calls, no Supabase dependency. This keeps Netlify builds fast, deterministic, and independent of the database.
+`npm run build` works purely from committed `.md` files — no scripts, no external dependencies, no network calls.
 
 **Local development workflow:**
 ```bash
-# 1. Edit metadata in Supabase dashboard
-# 2. Regenerate .md frontmatter locally
-npm run db:pull
-
-# 3. Commit the updated .md files
-git add src/works/ src/wiki/
-git commit -m "chore: sync metadata from Supabase"
-
-# 4. Deploy — Netlify builds from the committed .md files, no DB needed
-npm run build
+# 1. Claude session: ingest sources, update vault files
+# 2. Review changes in Obsidian (graph view, backlinks, content)
+# 3. git add src/wiki/ src/works/ src/research/index.md src/research/log.md
+# 4. git commit
+# 5. npm run build / push to deploy
 ```
-
-**Do not** add `db:pull` to the Netlify build command. If you ever need Netlify to pull from Supabase on deploy, add it explicitly in `netlify.toml` as a separate decision — do not bake it into `npm run build`.
-
----
-
-## Contribution model
-
-The project uses a two-phase architecture:
-
-**Phase 1 — DB-driven (current):** Supabase is authoritative for structured metadata. `db:pull` generates `.md` frontmatter. Prose is authored in Obsidian. Contributors edit metadata in Supabase; prose via git.
-
-**Phase 2 — File-driven (future, when the project goes public):** The `.md` files in git become authoritative for everything — frontmatter and prose. Supabase is no longer needed for the build. Anyone can fork the repo and open a pull request to fix a date, add a source, correct a title, or improve the prose.
-
-The transition is deliberate and simple: stop running `db:pull` and start treating the `.md` files as the canonical source. The two-zone file structure (`GENERATED` / `PROSE`) is already in place for this.
-
-A future `db:push` script (`.md` files → Supabase) can be added to enable bidirectional sync during Phase 1 if direct edits to `.md` frontmatter are needed before the cutover.
-
----
-
-## Data schema conventions
-
-All work metadata follows the schema defined in `tolstoy-works-schema.md`.
-
-**Naming convention:**
-
-- YAML frontmatter → **camelCase** (e.g., `titleEn`, `dateFirstPublished`)
-- Supabase/PostgreSQL columns → **snake_case** (e.g., `title_en`, `date_first_published`)
-
-**Key rules:**
-
-- `id` is the canonical slug (e.g., `anna-karenina`) — unique across all works.
-- Dates are ISO 8601 strings (`YYYY-MM-DD`). Uncertain dates use a companion `*Approximate: true` boolean.
-- `language` is ISO 639-1 (e.g., `ru`, `fr`).
-- Controlled vocabulary fields (`genre`, `completionStatus`, `firstPublishedVenueType`) must use only values listed in the schema — never introduce free-form values without updating the schema first.
-- `transcriberId` must reference the controlled transcriber list in the schema. Use `other` and populate `transcriberName` for unlisted transcribers.
-- Empty optional fields use `""` (string) or `[]` (array) — never `null` or omitted.
-- Prefer Wikidata QIDs as the primary external identifier anchor.
 
 ---
 
@@ -172,19 +176,20 @@ All work metadata follows the schema defined in `tolstoy-works-schema.md`.
 
 CSS is written using **CUBE CSS** layered on **Every Layout** primitives with **lean web** principles.
 
+**Tailwind is used as a design token compiler only** — not as a utility-class framework. `tailwind.config.js` defines the design system (colour palette, type scale, spacing). The Tailwind build step compiles these tokens into CSS custom properties. **Tailwind utility classes must not appear in HTML templates.**
+
 Layer order:
 
 1. **Base** — resets, element defaults
 2. **Compositions** — Every Layout primitives (Stack, Center, Cluster, Sidebar, Grid, etc.)
-3. **Blocks** — scoped component styles (e.g., `.work-card`, `.timeline-entry`, `.reader-view`)
-4. **Utilities** — single-purpose helpers (e.g., `.sr-only`, `.text-center`)
+3. **Blocks** — scoped component styles (`.work-card`, `.timeline-entry`, `.reader-view`)
+4. **Utilities** — single-purpose helpers (`.sr-only`, `.text-center`)
 
 Rules:
 
 - Use CSS custom properties for all design tokens. Never hardcode values.
 - Reach for an Every Layout primitive before writing custom layout CSS.
 - Prefer the CSS class approach (`.stack`) over web components (`<stack-l>`) unless progressive enhancement is needed.
-- No CSS frameworks (Tailwind, Bootstrap, etc.).
 - Media queries are a last resort — use intrinsic layout first.
 
 ---
@@ -200,28 +205,17 @@ Rules:
 
 ---
 
-## Supabase / database
-
-- Database is PostgreSQL hosted on Supabase.
-- All table and column names are **snake_case**.
-- Array fields (e.g., `gutenberg`, `oclc`) are stored as PostgreSQL arrays or JSONB — confirm column type before writing queries.
-- Row-level security (RLS) is assumed to be enabled; do not disable it.
-- When writing SQL, prefer CTEs over subqueries for readability.
-
----
-
-## Content and accuracy
-
-- All historical claims (dates, locations, archival references) must be sourced. Flag uncertain information with an `approximate` boolean or a `notes` field — never silently guess.
-- Russian text in Cyrillic script. Romanisation follows Library of Congress transliteration unless the source uses a different convention.
-- Work titles must appear in both `titleEn` (English) and `titleRu` (Cyrillic).
-
----
-
 ## Sensible defaults
 
-- When creating new content files, use the blank template in `tolstoy-works-schema.md` as the starting point.
-- When in doubt about a schema field, check `tolstoy-works-schema.md` before inventing structure.
+- When creating new content files, use the templates in `wiki-schema.md` or `tolstoy-works-schema.md` as the starting point.
+- When in doubt about a schema field, check the relevant schema before inventing structure.
 - Prefer static generation over dynamic rendering — Eleventy pages should be pre-rendered wherever possible.
 - Images in WebP/AVIF with `width`/`height` attributes and `loading="lazy"`.
 - All interactive elements must be keyboard-accessible.
+
+---
+
+## Git remotes
+
+- `origin` → `git@github.com:tolstoylife/tolstoy-life.git`
+- `upstream` → `https://github.com/madrilene/eleventy-excellent.git` (Eleventy Excellent theme — pull updates from here)

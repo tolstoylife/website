@@ -174,10 +174,15 @@ const SOURCES = [
   {
     table: 'works',
     dir: WORKS_SRC_DIR,
-    // Each work gets its own subfolder named by id (slug).
-    // The .md file inside uses the English title so Obsidian wikilinks resolve correctly.
-    // e.g. src/works/anna-karenina/Anna Karenina.md
-    filename: (row) => `${row.id}/${row.title_en || row.id}.md`,
+    // Each work is nested: main_category / subcategory / work_id / title.md
+    // Folder names are normalized: spaces and slashes become dashes, lowercase
+    // e.g. "Poetry/Songs" → "poetry-songs", "Short Stories" → "short-stories"
+    // e.g. src/works/fiction/novels/anna-karenina/Anna Karenina.md
+    filename: (row) => {
+      const main = normalizeFolderName(row.main_category);
+      const sub = normalizeFolderName(row.subcategory);
+      return `${main}/${sub}/${row.id}/${row.title_en || row.id}.md`;
+    },
   },
   {
     table: 'wiki_articles',
@@ -203,6 +208,19 @@ const SINGLE_ID = (() => {
  */
 function snakeToCamel(str) {
   return str.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
+}
+
+/**
+ * Normalize category/subcategory names for use in folder paths.
+ * Convert to lowercase, replace spaces and slashes with dashes.
+ * e.g. "Poetry/Songs" → "poetry-songs", "Short Stories" → "short-stories"
+ */
+function normalizeFolderName(name) {
+  if (!name) return 'uncategorized';
+  return name
+    .toLowerCase()
+    .replace(/[\s/]+/g, '-')  // spaces and slashes → dashes
+    .replace(/['"]/g, '');     // remove quotes
 }
 
 function rowToCamelCase(row) {
@@ -399,7 +417,7 @@ function transformWorksRow(row) {
   const ordered = {};
   const BEFORE_IDENTIFIERS = [
     'id','recordStatus','titleEn','titleRu','titleAlternatives',
-    'genre','language','completionStatus','publishedDuringLifetime','publishedInRussiaDuringLifetime',
+    'mainCategory','subcategory','genre','language','completionStatus','publishedDuringLifetime','publishedInRussiaDuringLifetime',
     'dateWritingStarted','dateWritingStartedOldStyle','dateWritingStartedApproximate','timeWritingStarted',
     'dateWritingCompleted','dateWritingCompletedOldStyle','dateWritingCompletedApproximate','timeWritingCompleted',
     'dateFirstPublished','dateFirstPublishedOldStyle','dateFirstPublishedApproximate',

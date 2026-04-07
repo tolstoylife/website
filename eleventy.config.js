@@ -106,6 +106,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addFilter('alphabetic', filters.sortAlphabetically);
   eleventyConfig.addFilter('slugify', filters.slugifyString);
   eleventyConfig.addFilter('dtcgItems', filters.dtcgItems);
+  eleventyConfig.addFilter('normalizeFolderName', filters.normalizeFolderName);
 
   // --------------------- Shortcodes
   eleventyConfig.addShortcode('svg', shortcodes.svgShortcode);

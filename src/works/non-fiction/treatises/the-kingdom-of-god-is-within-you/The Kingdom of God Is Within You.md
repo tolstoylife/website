@@ -17,6 +17,8 @@ titleAlternatives:
     title: Le Royaume de Dieu est en vous
     type: translation
     language: fr
+mainCategory: Non-Fiction
+subcategory: Treatises
 genre: philosophical
 language: ru
 completionStatus: complete
@@ -169,3 +171,4 @@ fieldSources:
 
 <!-- PROSE — edit freely in Obsidian -->
 
+A philosophical treatise arguing that authentic Christianity requires absolute nonresistance to evil by force — making the state, its armies, and its courts incompatible with the Gospels. Tolstoy surveys the history of the Christian pacifist tradition and concludes that every individual must choose between the law of God and the law of violence. Written between 1890 and 1893, it was immediately banned in Russia and first published in Germany. The book had a decisive influence on Mahatma Gandhi, who began a correspondence with Tolstoy after reading it.

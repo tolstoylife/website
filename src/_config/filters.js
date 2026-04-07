@@ -7,6 +7,7 @@ import { sortAlphabetically } from './filters/sort-alphabetic.js';
 import { splitlines } from './filters/splitlines.js';
 import { striptags } from './filters/striptags.js';
 import { slugifyString } from './filters/slugify.js';
+import normalizeFolderName from './filters/normalize-folder-name.js';
 
 export default {
   categoryFilter,
@@ -18,5 +19,6 @@ export default {
   striptags,
   shuffleArray,
   sortAlphabetically,
-  slugifyString
+  slugifyString,
+  normalizeFolderName
 };
