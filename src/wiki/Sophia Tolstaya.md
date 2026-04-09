@@ -33,6 +33,12 @@ relatedArticles:
   - leo-tolstoy
   - vladimir-chertkov
   - yasnaya-polyana
+  - sergei-tolstoy
+  - tatyana-tolstaya
+  - lev-lvovich-tolstoy
+  - maria-tolstaya
+  - andrei-tolstoy
+  - alexandra-tolstaya
 themes:
   - Tolstoy family
   - manuscript transcription

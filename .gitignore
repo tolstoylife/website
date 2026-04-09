@@ -1,9 +1,11 @@
 # Node modules
 node_modules
 
+#_raw foler
+src/_staging
+
 # generated files
 dist
-_site
 src/_includes/css
 src/_includes/scripts
 
@@ -32,9 +34,3 @@ _backup
 
 # Obsidian
 .obsidian
-.vault-nickname
-src/_obsidian
-/src/posts/notes/_fleeting
-/src/posts/notes/_sources
-
-/src/posts/articles/-drafts

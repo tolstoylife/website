@@ -53,15 +53,18 @@ tolstoy-life/
 │   ├── common/                   # System files: feeds, sitemap, robots, PWA manifest
 │   ├── pages/                    # Static pages (about, legal, accessibility, etc.)
 │   ├── posts/                    # Blog / news posts
-│   ├── research/                 # LLM Wiki operational files + staging area
+│   ├── sources/                  # Source cards + index + log (LLM Wiki operational files)
 │   │   ├── index.md              # Catalog of all wiki + works pages (LLM navigation)
 │   │   ├── log.md                # Chronological record of ingest/query/lint operations
-│   │   ├── sources/              # Source cards — .md stubs for each major source (wikilink-able)
-│   │   └── ...                   # Clippings, notes, extracted passages (staging)
+│   │   └── ...                   # Source cards — .md stubs for each major source (wikilink-able)
+│   ├── _staging/                 # Clippings, notes, extracted passages (not in git)
 │   ├── wiki/                     # Wiki articles (people, events, places, concepts)
 │   └── works/                    # Work folders: [Title].md overview + sidecar + text/
-├── tolstoy-works-schema.md       # Canonical works metadata schema (v5)
-├── wiki-schema.md                # Wiki article schema (page types, frontmatter, operations)
+├── schema/                       # Schema and convention documents
+│   ├── tolstoy-works-schema.md   # Canonical works metadata schema (v5)
+│   ├── wiki-schema.md            # Wiki article schema (page types, frontmatter, operations)
+│   ├── tolstoy-person-schema.md  # Person page schema (superseded by wiki-schema.md)
+│   └── tolstoy-place-schema.md   # Place page schema (superseded by wiki-schema.md)
 ├── eleventy.config.js
 └── CLAUDE.md                     # This file
 ```
@@ -119,7 +122,7 @@ chapter: 1
 The full text of the chapter with [[wikilinks]] woven in.
 ```
 
-Wiki article files (`src/wiki/Sophia Tolstaya.md`) follow the templates in `wiki-schema.md`.
+Wiki article files (`src/wiki/Sophia Tolstaya.md`) follow the templates in `schema/wiki-schema.md`.
 
 **Rules:**
 - Frontmatter is authored by Claude based on primary sources. During R&D, Claude writes directly. In production, changes come via PR.
@@ -140,11 +143,11 @@ The text landing file for a work is named `[Title] — Text.md` (em-dash, not hy
 
 ### Eleventy ignores
 
-`src/research/` is excluded from Eleventy via `.eleventyignore` — the index, log, and staging materials must never generate pages. If adding other vault-only folders in future, add them to `.eleventyignore` as well.
+`src/sources/` and `src/_staging/` are excluded from Eleventy via `.eleventyignore` — the index, log, source cards, and staging materials must never generate pages. If adding other vault-only folders in future, add them to `.eleventyignore` as well.
 
 ### Obsidian vault
 
-`src/` is the Obsidian vault. Open `src/` directly in Obsidian. Wikilinks, backlinks, and graph view work against all `.md` files in `wiki/`, `works/`, and `research/`.
+`src/` is the Obsidian vault. Open `src/` directly in Obsidian. Wikilinks, backlinks, and graph view work against all `.md` files in `wiki/`, `works/`, and `sources/`.
 
 ---
 
@@ -165,7 +168,7 @@ npm run build        # Clean + production build
 ```bash
 # 1. Claude session: ingest sources, update vault files
 # 2. Review changes in Obsidian (graph view, backlinks, content)
-# 3. git add src/wiki/ src/works/ src/research/index.md src/research/log.md
+# 3. git add src/wiki/ src/works/ src/sources/
 # 4. git commit
 # 5. npm run build / push to deploy
 ```
@@ -207,7 +210,7 @@ Rules:
 
 ## Sensible defaults
 
-- When creating new content files, use the templates in `wiki-schema.md` or `tolstoy-works-schema.md` as the starting point.
+- When creating new content files, use the templates in `schema/wiki-schema.md` or `schema/tolstoy-works-schema.md` as the starting point.
 - When in doubt about a schema field, check the relevant schema before inventing structure.
 - Prefer static generation over dynamic rendering — Eleventy pages should be pre-rendered wherever possible.
 - Images in WebP/AVIF with `width`/`height` attributes and `loading="lazy"`.

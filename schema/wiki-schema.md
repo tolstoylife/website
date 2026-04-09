@@ -1,11 +1,11 @@
 # wiki-schema.md — Wiki Article Schema
 
 > **Version:** 1.0 (2026-04-06)
-> **Companion to:** `tolstoy-works-schema.md` (v5) for work metadata.
+> **Companion to:** `schema/tolstoy-works-schema.md` (v5) for work metadata.
 
-This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the index and log files in `src/research/`.
+This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the source cards, index, and log files in `src/sources/`.
 
-Works have their own schema (`tolstoy-works-schema.md`). This file covers people, places, events, and concepts.
+Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, and concepts.
 
 ---
 
@@ -186,9 +186,9 @@ Prose content about this concept.
 
 ---
 
-## Source card template — `src/research/sources/`
+## Source card template — `src/sources/`
 
-Each major source gets a small `.md` stub in `src/research/sources/`. Source cards make sources visible in Obsidian's graph and wikilink-able from wiki articles and log entries. The binary file itself stays in `sources/` at the project root.
+Each major source gets a small `.md` stub in `src/sources/`. Source cards make sources visible in Obsidian's graph and wikilink-able from wiki articles and log entries. The binary file itself stays in `primary-sources/` at the project root.
 
 ```yaml
 ---
@@ -200,7 +200,7 @@ author: "Paul Birukoff"
 publicationDate: "1911"
 language: en
 format: epub
-binaryPath: "sources/birukoff/leo-tolstoy-his-life-and-work.epub"
+binaryPath: "primary-sources/birukoff/leo-tolstoy-his-life-and-work.epub"
 ingestionStatus: pending
 ingestionDate: ""
 pagesCreated: []
@@ -216,7 +216,7 @@ Covers: early life, education, military service, literary career, religious cris
 ### Fields
 
 - `ingestionStatus`: `pending` · `partial` · `complete`
-- `binaryPath`: relative path from the project root to the actual file in `sources/`
+- `binaryPath`: relative path from the project root to the actual file in `primary-sources/`
 - `pagesCreated` / `pagesUpdated`: filled in by Claude after ingestion, creating a record of what this source contributed to the wiki
 - The prose section is a brief description of the source's scope and relevance
 
@@ -229,7 +229,7 @@ Covers: early life, education, military service, literary career, religious cris
 
 ---
 
-## Index file — `src/research/index.md`
+## Index file — `src/sources/index.md`
 
 The index is a catalog of every content page in the vault. Claude reads this first when navigating the vault at the start of a session or when answering queries. It should be kept current — updated on every ingest operation.
 
@@ -278,7 +278,7 @@ Last updated: 2026-04-06
 
 ---
 
-## Log file — `src/research/log.md`
+## Log file — `src/sources/log.md`
 
 The log is an append-only chronological record of wiki operations. It provides narrative context that git history doesn't capture.
 

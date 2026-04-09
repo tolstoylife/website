@@ -40,6 +40,12 @@ relatedArticles:
   - pavel-birukoff
   - yasnaya-polyana
   - astapovo
+  - sergei-tolstoy
+  - tatyana-tolstaya
+  - lev-lvovich-tolstoy
+  - maria-tolstaya
+  - andrei-tolstoy
+  - alexandra-tolstaya
 themes:
   - Russian literature
   - moral philosophy
