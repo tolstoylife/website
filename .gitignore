@@ -19,7 +19,9 @@ src/_includes/scripts
 .claude
 
 # Obsidian
-.obsidian/
+src/.obsidian/workspace.json
+src/.obsidian/workspace-mobile.json
+src/.obsidian/cache
 
 # Editor configs mm
 .nova
