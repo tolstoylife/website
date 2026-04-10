@@ -1,5 +1,5 @@
 {
-  "name": "tolstoy-life",
+  "name": "tolstoy-life-website",
   "version": "0.2.0",
   "description": "An encyclopedic reference covering the life and works of Leo Tolstoy.",
   "author": "Johan Edlund",
@@ -29,7 +29,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tolstoylife/tolstoy-life.git"
+    "url": "https://github.com/tolstoylife/website.git"
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",

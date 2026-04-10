@@ -1,4 +1,4 @@
-# CLAUDE.md — tolstoy-life
+# CLAUDE.md — tolstoy.life website
 
 The front-end PWA, e-reader, and Obsidian vault for tolstoy.life, built with Eleventy.
 
@@ -30,7 +30,7 @@ Plus **posts** (blog/news) and **pages** (about, legal, accessibility).
 ## Project structure
 
 ```
-tolstoy-life/
+website/
 ├── src/                          # Obsidian vault root + Eleventy input
 │   ├── .obsidian/                # Obsidian config (do not edit manually)
 │   ├── _config/                  # Eleventy config modules
@@ -220,5 +220,5 @@ Rules:
 
 ## Git remotes
 
-- `origin` → `git@github.com:tolstoylife/tolstoy-life.git`
+- `origin` → `https://github.com/tolstoylife/website.git`
 - `upstream` → `https://github.com/madrilene/eleventy-excellent.git` (Eleventy Excellent theme — pull updates from here)
