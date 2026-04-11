@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/Sophia Tolstaya.md",
+                "file": "wiki/Pavel Birukoff.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sophia Tolstaya"
+              "title": "Pavel Birukoff"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 241.50260543823242
+    "width": 421.5026054382324
   },
   "right": {
     "id": "right",
@@ -184,8 +184,13 @@
       "obsidian-local-images-plus:Local Images Plus  0.16.4\r\nLocalize attachments (plugin folder)": false
     }
   },
-  "active": "37ed93f4bf3a9e99",
+  "active": "9bd75e9cab94b262",
   "lastOpenFiles": [
+    "wiki/Tolstoyanism.md",
+    "_raw/Nice Permalinks In Eleventy AND Nice Filenames in Obsidian.md",
+    "_raw",
+    "_staging/notes/tolstoy-on-labels-research-2026-04-10.md",
+    "wiki/Sophia Tolstaya.md",
     "wiki/Vladimir Chertkov.md",
     "wiki/Leo Tolstoy.md",
     "assets/images/wiki",
@@ -199,7 +204,6 @@
     "_includes/scripts/is-land.js",
     "_includes/scripts/dialog.js",
     "_includes/scripts/details.js",
-    "_includes/scripts",
     "works/fiction/novellas/master-and-man/Master and Man.md",
     "works/fiction/childrens-literature/abc-book/ABC Book.md",
     "pages/privacy.md",

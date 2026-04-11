@@ -1,5 +1,34 @@
 # Wiki Operations Log
 
+## [2026-04-10] ingest | Concept pages — Tolstoyanism and Christian Anarchism
+
+**Source:** Secondary literature research synthesis (web search, April 2026). No single primary source — this is a hypothesis-driven ingest based on secondary literature. Research note filed in `src/_staging/notes/tolstoy-on-labels-research-2026-04-10.md`.
+**Pages created:** [[Tolstoyanism]], [[Christian Anarchism]]
+**Pages updated:** none
+
+**Rationale:** Both terms are used pervasively in academic literature and Wikipedia to describe Tolstoy's later philosophy. The wiki needs these pages as nodes in the concept graph — they will be linked from person pages, work pages, and future source ingestions. However, Tolstoy himself rejected both labels, and the wiki's curatorial direction treats this rejection as significant framing context.
+
+**Approach — skelett + staging:**
+- Both pages carry `recordStatus: draft` and have `<!-- NEEDS PRIMARY SOURCE -->` markers on every claim that lacks a Jubilee Edition or primary-source citation.
+- The staging note documents what secondary literature says, what primary sources need to be checked, and a table mapping claims to the specific volumes/sources that can verify them.
+- The wiki prose is written to be *directionally correct* but explicitly flagged as unverified. Future source ingestions (Maude, Birukoff, Jubilee Edition letters/diaries) will either confirm, correct, or deepen the content.
+
+**Key content points:**
+- Tolstoyanism: the movement, its key figures ([[Vladimir Chertkov]], [[Pavel Birukoff]], Aylmer Maude), Tolstoy's rejection of the label, the tension between movement and namesake.
+- Christian Anarchism: the term's origin (1894 reviews of *Kingdom of God*), Tolstoy's rejection of "anarchist" due to violence association, his substantive engagement with anarchist critique in *On Anarchy* (1900), his own preferred terminology (non-resistance, true Christianity, Kingdom of God).
+
+**Wikidata QIDs assigned:**
+- Tolstoyanism: Q959891
+- Christian Anarchism: Q192936
+
+**Open questions:**
+- The "Tolstoyism" rejection letter: which volume of the Jubilee Edition? Who was the recipient? What year?
+- *On Anarchy* (1900): is it in Jubilee Edition vol. 34 or elsewhere? The full Russian text needs to be located.
+- Which specific 1894 reviews coined "Christian anarchism"? Christoyannopoulos may have the answer.
+- Should Aylmer Maude get his own person page? He is referenced in both concept pages and the log but has no wiki entry yet.
+
+**Next:** When Maude's *Life of Tolstoy* or Birukoff's biography is ingested, revisit both pages — update prose, add inline citations, and raise `recordStatus` toward `reviewed`.
+
 ## [2026-04-07] ingest | pg27189.txt — *Bethink Yourselves!* (1904)
 
 **Source:** [[Bethink Yourselves — Project Gutenberg]] (`src/_staging/pg27189.txt` → binary also in `primary-sources/works/non-fiction/essays/bethink-yourselves/`)

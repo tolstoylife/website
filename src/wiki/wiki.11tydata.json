@@ -1,4 +1,5 @@
 {
   "layout": "wiki",
-  "tags": ["wiki"]
+  "tags": ["wiki"],
+  "permalink": "/wiki/{{ id }}/"
 }

@@ -1,6 +1,6 @@
 # Vault Index
 
-Last updated: 2026-04-07 (2)
+Last updated: 2026-04-10
 
 ## People
 
@@ -26,7 +26,8 @@ Last updated: 2026-04-07 (2)
 
 ## Concepts
 
-(none yet)
+- [[Christian Anarchism]] — Political philosophy; label applied to Tolstoy by others, never adopted by him
+- [[Tolstoyanism]] — Movement inspired by LT's later writings; a label LT himself rejected
 
 ## Works
 

@@ -76,7 +76,7 @@ Leo Nikolaevich Tolstoy (Лев Николаевич Толстой; 9 September
 
 He was born at [[Yasnaya Polyana]], his family estate in Tula Oblast, where he spent most of his life and where he is buried. His best-known works are [[War and Peace]] (1869) and [[Anna Karenina]] (1877–78), both written at Yasnaya Polyana.
 
-In his later years Tolstoy underwent a profound spiritual crisis, renouncing his earlier literary work and developing a distinctive religious and moral philosophy grounded in a radical reading of the Gospels. His ideas — non-resistance to evil, the rejection of state and church authority, the primacy of conscience — influenced the [[Tolstoyan movement]] and had a documented impact on figures including Gandhi. His closest associate in this period was [[Vladimir Chertkov]], who edited and published his writings. [[Pavel Birukoff]], a friend and follower, wrote the principal early biography.
+In his later years Tolstoy underwent a profound spiritual crisis, renouncing his earlier literary work and developing a distinctive religious and moral philosophy grounded in a radical reading of the Gospels. His ideas — non-resistance to evil, the rejection of state and church authority, the primacy of conscience — influenced the [[Tolstoyanism|Tolstoyan movement]] and had a documented impact on figures including Gandhi. His closest associate in this period was [[Vladimir Chertkov]], who edited and published his writings. [[Pavel Birukoff]], a friend and follower, wrote the principal early biography.
 
 Tolstoy's manuscripts and correspondence are preserved primarily at the State Museum of Leo Tolstoy in Moscow. The canonical edition of his works is the Jubilee Edition (*Полное собрание сочинений*, 90 volumes, 1928–1964).
 

@@ -161,7 +161,9 @@ Prose content about this event.
 ---
 id: christian-anarchism
 recordStatus: draft
+draft: true
 type: concept
+title: Christian Anarchism
 titleEn: Christian Anarchism
 titleRu: Христианский анархизм
 description: "Political philosophy combining Christianity with anarchism, heavily influenced by Tolstoy's later writings."
@@ -183,6 +185,10 @@ fieldSources: {}
 
 Prose content about this concept.
 ```
+
+**Note on `title` field:** The Eleventy wiki index template (`index.njk`) uses `entry.data.title` for display. All wiki pages must include an explicit `title` field in frontmatter — not only `titleEn`. For concept pages, `title` and `titleEn` should be identical.
+
+**Note on `draft: true`:** Pages with `draft: true` are excluded from the production build but visible locally with `npm run dev`. Use this alongside `recordStatus: draft` for pages that are not yet ready for the live site.
 
 ---
 
