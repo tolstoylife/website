@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "9cc5963fb3c6baa1",
+        "id": "2e88b01f128ff686",
         "type": "tabs",
         "children": [
           {
-            "id": "9bd75e9cab94b262",
+            "id": "cdde806a76a78988",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "wiki/Pavel Birukoff.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Pavel Birukoff"
+              "title": "New tab"
             }
           }
         ]
@@ -184,8 +180,9 @@
       "obsidian-local-images-plus:Local Images Plus  0.16.4\r\nLocalize attachments (plugin folder)": false
     }
   },
-  "active": "9bd75e9cab94b262",
+  "active": "cdde806a76a78988",
   "lastOpenFiles": [
+    "wiki/Pavel Birukoff.md",
     "wiki/Tolstoyanism.md",
     "_raw/Nice Permalinks In Eleventy AND Nice Filenames in Obsidian.md",
     "_raw",
