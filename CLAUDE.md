@@ -1,5 +1,13 @@
 # CLAUDE.md — tolstoy.life website
 
+> **⚠️ DEPRECATED** — This file is no longer maintained. 
+> All project documentation has been consolidated into the parent CLAUDE.md at `../CLAUDE.md`. 
+> Please refer to that file for the authoritative reference on architecture, schema, vocabulary, and operations.
+>
+> This file is kept for reference only and may become stale.
+
+---
+
 The front-end PWA, e-reader, and Obsidian vault for tolstoy.life, built with Eleventy.
 
 > **See also:** `../CLAUDE.md` for the shared mission, vocabulary, data flow, wiki operations model, schema reference, and content accuracy standards that apply across all projects in this folder.
