@@ -15,6 +15,10 @@ export default {
   ],
   bottom: [
     {
+      text: 'Changelog',
+      url: '/changelog/'
+    },
+    {
       text: 'Accessibility',
       url: '/accessibility/'
     }
