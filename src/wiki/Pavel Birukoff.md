@@ -52,4 +52,4 @@ Birukoff met Tolstoy in the 1880s and became part of the inner circle of Tolstoy
 
 His four-volume biography, *Leo Tolstoy: His Life and Work* (first published in Russian 1906–1923, translated into English by Maude and others), is one of the primary narrative sources for Tolstoy's life. It draws on Birukoff's personal acquaintance with Tolstoy, correspondence, and access to family papers. Despite its sympathetic perspective, it remains an important source in the project's authority hierarchy.
 
-The biography exists in the corpus in an uncleaned OCR form (`corpus/data/unprocessed/`); a corrected version is being prepared for ingestion.
+The biography exists in an uncleaned OCR form (`primary-sources/biographies/`); a corrected version is being prepared for ingestion.

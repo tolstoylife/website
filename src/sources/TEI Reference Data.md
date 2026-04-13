@@ -7,7 +7,7 @@ author: "Anastasiya Bonch-Osmolovskaya, Fyokla Tolstaya, Boris Orekhov et al."
 publicationDate: "2015–2025"
 language: ru
 format: xml
-binaryPath: "corpus/data/unprocessed/tolstoydigital-TEI/reference/"
+binaryPath: "primary-sources/tolstoydigital-TEI/reference/"
 license: "CC BY-SA"
 ingestionStatus: partial
 ingestionDate: "2026-04-06"

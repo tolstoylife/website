@@ -34,7 +34,7 @@ fieldSources:
 
 Yasnaya Polyana (Ясная Поляна, meaning "Bright Glade") is an estate in Tula Oblast, Russia, approximately 200 kilometres south of Moscow. It was the birthplace, principal home, and burial place of [[Leo Tolstoy]].
 
-The estate descended to Tolstoy through his mother's family, the Volkonskys. Tolstoy inherited it in 1847. He lived there for the greater part of his life and wrote most of his major works on the property, including *War and Peace*, [[Anna Karenina]], and his later philosophical and religious writings.
+The estate descended to Tolstoy through his mother's family, the Volkonskys. Tolstoy inherited it in 1847. He lived there for the greater part of his life and wrote most of his major works on the property, including *[[War and Peace]]*, [[Anna Karenina]], and his later philosophical and religious writings.
 
 Between 1859 and 1862, Tolstoy operated a school for peasant children at Yasnaya Polyana, conducting progressive experiments in free education that he documented in his pedagogical journal *Yasnaya Polyana* (1862). The school was closed by Tsarist authorities during a search of the estate in 1862.
 

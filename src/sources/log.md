@@ -1,5 +1,19 @@
 # Wiki Operations Log
 
+## [2026-04-13] lint | Post-consolidation health check
+
+**Trigger:** Full vault lint after CLAUDE.md consolidation and `corpus/` → `__backup/` move.
+
+**Pages created:** [[War and Peace]] (work overview — fixes broken wikilink from [[Leo Tolstoy]])
+**Pages updated:** [[Pavel Birukoff]] (corpus path → primary-sources), [[Yasnaya Polyana]] (added [[War and Peace]] wikilink), [[How Much Land Does a Man Need?]] (added [[Leo Tolstoy]] wikilink)
+**Sources updated:** [[TEI Reference Data]] (binaryPath → `primary-sources/tolstoydigital-TEI/reference/`)
+**Index:** Rebuilt `sources/index.md` — now covers all 29 pages (was 18)
+**Infrastructure:** Copied `tolstoydigital-TEI/reference/` from `__backup/corpus/` to `primary-sources/`. All `corpus/` references in vault content files eliminated.
+
+**Findings deferred:**
+- 14 works lack `.data.yaml` sidecar files (expected at this stage — create when deep scholarly metadata is available)
+- Most works pages still have minimal prose; wikilink density will improve as prose is written
+
 ## [2026-04-10] ingest | Concept pages — Tolstoyanism and Christian Anarchism
 
 **Source:** Secondary literature research synthesis (web search, April 2026). No single primary source — this is a hypothesis-driven ingest based on secondary literature. Research note filed in `src/_staging/notes/tolstoy-on-labels-research-2026-04-10.md`.
@@ -56,7 +70,7 @@
 
 ## [2026-04-07] ingest | TEI Reference Data — LT's children (6 pages)
 
-**Source:** [[TEI Reference Data]] (`corpus/data/unprocessed/tolstoydigital-TEI/reference/personList.xml`)
+**Source:** [[TEI Reference Data]] (`primary-sources/tolstoydigital-TEI/reference/personList.xml`)
 **Pages created:** [[Sergei Tolstoy]], [[Tatyana Tolstaya]], [[Lev Lvovich Tolstoy]], [[Maria Tolstaya]], [[Andrei Tolstoy]], [[Alexandra Tolstaya]]
 **Pages updated:** [[Leo Tolstoy]] (added 6 children to relatedArticles), [[Sophia Tolstaya]] (added 6 children to relatedArticles)
 
@@ -77,7 +91,7 @@
 
 ## [2026-04-06] ingest | TEI Reference Data — test run (5 entities)
 
-**Source:** [[TEI Reference Data]] (`corpus/data/unprocessed/tolstoydigital-TEI/reference/`)
+**Source:** [[TEI Reference Data]] (`primary-sources/tolstoydigital-TEI/reference/`)
 **Pages created:** [[Sophia Tolstaya]], [[Vladimir Chertkov]], [[Pavel Birukoff]], [[Yasnaya Polyana]], [[Astapovo]]
 **Pages updated:** [[Leo Tolstoy]] (frontmatter migrated to new wiki-schema person template; legacy zone marker removed)
 
