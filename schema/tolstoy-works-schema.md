@@ -1,8 +1,8 @@
 # Tolstoy Works — Metadata Schema
 
 **Project:** tolstoy.life
-**Convention:** camelCase (YAML frontmatter) → snake_case (Supabase/PostgreSQL)
-**Date:** 2026-03-31 (v5)
+**Convention:** camelCase (YAML frontmatter)
+**Date:** 2026-04-16 (v6)
 
 ---
 
@@ -118,7 +118,7 @@ An ordered list. One entry per distinct location where the work was written.
 | `authoringLocations[].building` | string | Building name or type |
 | `authoringLocations[].room` | string | Room name or type |
 | `authoringLocations[].coordinates.lat` | number | Latitude (decimal degrees) |
-| `authoringLocations[].coordinates.lng` | number | Longitude (decimal degrees) |
+| `authoringLocations[].coordinates.lon` | number | Longitude (decimal degrees) |
 | `authoringLocations[].dateFrom` | string | Gregorian (NS). ISO 8601: start of time at this location |
 | `authoringLocations[].dateFromOldStyle` | string | Julian (OS) date as recorded in Russian sources |
 | `authoringLocations[].dateFromApproximate` | boolean | `true` if exact start date is uncertain |
@@ -137,7 +137,7 @@ authoringLocations:
     room: "Study"
     coordinates:
       lat: 54.0667
-      lng: 37.5167
+      lon: 37.5167
     dateFrom: "1873-03-31"
     dateFromOldStyle: "1873-03-19"
     dateFromApproximate: false
@@ -153,7 +153,7 @@ authoringLocations:
     room: "Study"
     coordinates:
       lat: 55.7290
-      lng: 37.5720
+      lon: 37.5720
     dateFrom: "1875-12-13"
     dateFromOldStyle: "1875-12-01"
     dateFromApproximate: false
@@ -378,7 +378,108 @@ notes: ""
 
 ---
 
-## 8. Identifiers
+## 8. Editions and Translations (sidecar only)
+
+Publication history — all known Russian editions and foreign translations. These arrays live exclusively in the sidecar `.data.yaml`, never in the `.md` frontmatter.
+
+| Field | Type | Description |
+|---|---|---|
+| `editions[].editionId` | string | Unique ID within this work, e.g. `ed-01` |
+| `editions[].year` | string | ISO 8601: publication year |
+| `editions[].publisher` | string | Publisher name |
+| `editions[].city` | string | City of publication |
+| `editions[].language` | string | ISO 639-1 |
+| `editions[].editionType` | string | `first` · `revised` · `collected-works` · `posthumous` · `censored` · `other` |
+| `editions[].volumes` | integer | Number of volumes |
+| `editions[].notes` | string | Free text |
+| `translationEditions[].translationId` | string | Unique ID, e.g. `tr-01` |
+| `translationEditions[].translatorId` | string | Wiki slug of translator (if they have a wiki page) |
+| `translationEditions[].translatorName` | string | Full name of translator |
+| `translationEditions[].language` | string | ISO 639-1 target language |
+| `translationEditions[].year` | string | ISO 8601: publication year |
+| `translationEditions[].publisher` | string | Publisher name |
+| `translationEditions[].city` | string | City of publication |
+| `translationEditions[].title` | string | Title in target language |
+| `translationEditions[].notes` | string | Free text |
+
+```yaml
+editions:
+  - editionId: "ed-01"
+    year: "1878"
+    publisher: "Типография Т. Рис"
+    city: "Moscow"
+    language: "ru"
+    editionType: "first"
+    volumes: 3
+    notes: "First complete book edition, after serialisation in Russkiy Vestnik"
+translationEditions:
+  - translationId: "tr-01"
+    translatorId: "constance-garnett"
+    translatorName: "Constance Garnett"
+    language: "en"
+    year: "1901"
+    publisher: "William Heinemann"
+    city: "London"
+    title: "Anna Karenina"
+    notes: "First widely-read English translation"
+```
+
+---
+
+## 9. Reception and Criticism (sidecar only)
+
+Reviews, critical responses, and cited works. These arrays live exclusively in the sidecar `.data.yaml`.
+
+| Field | Type | Description |
+|---|---|---|
+| `reviews[].reviewId` | string | Unique ID, e.g. `rev-01` |
+| `reviews[].author` | string | Reviewer name |
+| `reviews[].title` | string | Title of review |
+| `reviews[].venue` | string | Publication name |
+| `reviews[].date` | string | ISO 8601 |
+| `reviews[].language` | string | ISO 639-1 |
+| `reviews[].notes` | string | Free text |
+| `citedWorks[].workId` | string | Wiki slug of the cited work (if it has a page) |
+| `citedWorks[].title` | string | Title of the cited work |
+| `citedWorks[].author` | string | Author of the cited work |
+| `citedWorks[].citationType` | string | `epigraph` · `quotation` · `allusion` · `response` · `critique` |
+| `citedWorks[].notes` | string | Free text |
+
+```yaml
+reviews:
+  - reviewId: "rev-01"
+    author: "Fyodor Dostoevsky"
+    title: ""
+    venue: "Diary of a Writer"
+    date: "1877"
+    language: "ru"
+    notes: "Dostoevsky's commentary on Anna Karenina in his Diary of a Writer column"
+citedWorks: []
+```
+
+---
+
+## 10. Correspondence fields (letters only)
+
+These fields apply only to works with `genre: letter`. They support the `letters/` collection.
+
+| Field | Type | Description |
+|---|---|---|
+| `recipient` | string | Full name of the letter's recipient |
+| `recipientId` | string | Wiki slug of the recipient (if they have a wiki page) |
+| `replyTo` | string | `id` of the letter this is a reply to (if known) |
+| `letterNumber` | string | Number in the Jubilee Edition or other canonical numbering |
+
+```yaml
+recipient: "Sophia Andreevna Tolstaya"
+recipientId: "sophia-tolstaya"
+replyTo: ""
+letterNumber: ""
+```
+
+---
+
+## 11. Identifiers
 
 All known external identifiers. Values are strings unless marked as arrays.
 
@@ -419,7 +520,7 @@ identifiers:
 
 ---
 
-## 9. Field Sources
+## 12. Field Sources
 
 Source attribution at the field level. References `id` values defined in the shared `sources.yaml` library. Each entry maps a field name to one or more sources that support the value in that field.
 
@@ -510,7 +611,7 @@ authoringLocations:
     room: ""
     coordinates:
       lat: 0
-      lng: 0
+      lon: 0
     dateFrom: ""
     dateFromOldStyle: ""
     dateFromApproximate: false
@@ -590,6 +691,44 @@ relatedWorks:
   - id: ""
     relationshipType: ""
 notes: ""
+
+# ── Editions & Translations (sidecar only) ───────────────────
+editions:
+  - editionId: ""
+    year: ""
+    publisher: ""
+    city: ""
+    language: "ru"
+    editionType: ""
+    volumes: 0
+    notes: ""
+translationEditions:
+  - translationId: ""
+    translatorId: ""
+    translatorName: ""
+    language: ""
+    year: ""
+    publisher: ""
+    city: ""
+    title: ""
+    notes: ""
+
+# ── Reception & Criticism (sidecar only) ─────────────────────
+reviews:
+  - reviewId: ""
+    author: ""
+    title: ""
+    venue: ""
+    date: ""
+    language: ""
+    notes: ""
+citedWorks: []
+
+# ── Correspondence (genre: letter only) ──────────────────────
+recipient: ""
+recipientId: ""
+replyTo: ""
+letterNumber: ""
 
 # ── Identifiers ──────────────────────────────────────────────
 identifiers:

@@ -1,17 +1,17 @@
 # wiki-schema.md — Wiki Article Schema
 
-> **Version:** 1.0 (2026-04-06)
-> **Companion to:** `schema/tolstoy-works-schema.md` (v5) for work metadata.
+> **Version:** 1.1 (2026-04-16)
+> **Companion to:** `schema/tolstoy-works-schema.md` (v6) for work metadata.
 
 This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the source cards, index, and log files in `src/sources/`.
 
-Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, and concepts.
+Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, concepts, translators, institutions, adaptations, critical works, and archival fonds.
 
 ---
 
 ## Page types
 
-Every wiki article has a `type` field in its frontmatter. The four types are:
+Every wiki article has a `type` field in its frontmatter. The nine types are:
 
 | Type | What it covers | Examples |
 |---|---|---|
@@ -19,6 +19,13 @@ Every wiki article has a `type` field in its frontmatter. The four types are:
 | `place` | Locations and buildings | Yasnaya Polyana, Moscow, Astapovo station |
 | `event` | Historical events and incidents | Excommunication of Tolstoy, Emancipation reform of 1861 |
 | `concept` | Ideas, movements, and themes | Christian anarchism, Tolstoyan movement, Non-resistance |
+| `translator` | Translators of Tolstoy's works | Aylmer Maude, Constance Garnett, Louise Maude |
+| `institution` | Publishers, archives, organisations | Intermediary (Posrednik), Russkiy Vestnik, Tolstoy Museum |
+| `adaptation` | Film, stage, and other adaptations | Anna Karenina (1935 film), War and Peace (1966 film) |
+| `criticalWork` | Major scholarly or critical works about Tolstoy | Shklovsky's *Tolstoy*, Eikhenbaum's *Young Tolstoy* |
+| `archivalFond` | Archival collections and fonds | GMT fond 1, RGB fond 304 |
+
+**Note on `translator` vs `person`:** Translators who are notable in their own right (e.g. Aylmer Maude, who was also a biographer and friend of Tolstoy) should use `type: person` with a `translator` role. The `translator` type is for individuals known primarily as translators, where the translation work is the main subject of the article.
 
 ---
 
@@ -44,6 +51,7 @@ All frontmatter follows these rules (inherited from the root CLAUDE.md):
 id: sophia-tolstaya
 recordStatus: draft
 type: person
+title: Sophia Tolstaya
 titleEn: Sophia Tolstaya
 titleRu: Софья Андреевна Толстая
 description: "Wife of Leo Tolstoy, diarist, and manuscript transcriber (1844–1919)."
@@ -99,6 +107,7 @@ Uses [[wikilinks]] to connect to other vault files.
 id: yasnaya-polyana
 recordStatus: draft
 type: place
+title: Yasnaya Polyana
 titleEn: Yasnaya Polyana
 titleRu: Ясная Поляна
 description: "Tolstoy's primary estate in Tula Oblast, Russia."
@@ -131,6 +140,7 @@ Prose content about this place.
 id: excommunication-of-tolstoy
 recordStatus: draft
 type: event
+title: Excommunication of Tolstoy
 titleEn: Excommunication of Tolstoy
 titleRu: Отлучение Толстого от церкви
 description: "The Holy Synod's 1901 proclamation declaring Tolstoy outside the Orthodox Church."
@@ -186,9 +196,190 @@ fieldSources: {}
 Prose content about this concept.
 ```
 
-**Note on `title` field:** The Eleventy wiki index template (`index.njk`) uses `entry.data.title` for display. All wiki pages must include an explicit `title` field in frontmatter — not only `titleEn`. For concept pages, `title` and `titleEn` should be identical.
+**Note on `title` field:** The Eleventy wiki index template (`index.njk`) uses `entry.data.title` for display. All wiki pages must include an explicit `title` field in frontmatter — not only `titleEn`. For most pages, `title` and `titleEn` should be identical.
 
 **Note on `draft: true`:** Pages with `draft: true` are excluded from the production build but visible locally with `npm run dev`. Use this alongside `recordStatus: draft` for pages that are not yet ready for the live site.
+
+---
+
+## Translator template
+
+```yaml
+---
+id: constance-garnett
+recordStatus: draft
+type: translator
+title: Constance Garnett
+titleEn: Constance Garnett
+titleRu: Констанс Гарнетт
+description: "English translator who produced the first widely-read English translations of Tolstoy, Dostoevsky, and Chekhov."
+birthDate: "1861-12-19"
+deathDate: "1946-12-17"
+nationality: British
+languages:
+  - ru
+  - en
+translatedWorks:
+  -
+    id: anna-karenina
+    year: "1901"
+    publisher: "William Heinemann"
+  -
+    id: war-and-peace
+    year: "1904"
+    publisher: "William Heinemann"
+relatedArticles:
+  - aylmer-maude
+themes:
+  - translation
+  - English reception of Tolstoy
+identifiers:
+  wikidata: Q237126
+fieldSources: {}
+---
+
+Prose content about this translator.
+```
+
+---
+
+## Institution template
+
+```yaml
+---
+id: posrednik
+recordStatus: draft
+type: institution
+title: Intermediary (Posrednik)
+titleEn: Intermediary (Posrednik)
+titleRu: Посредник
+description: "Publishing house founded in 1884 by Vladimir Chertkov and Ivan Sytin to distribute affordable editions of Tolstoy's works to the Russian peasantry."
+foundedDate: "1884"
+foundedDateOldStyle: ""
+foundedDateApproximate: false
+dissolvedDate: "1935"
+dissolvedDateApproximate: true
+institutionType: publisher
+location: "Moscow, Russia"
+founders:
+  - vladimir-chertkov
+  - ivan-sytin
+relatedArticles:
+  - leo-tolstoy
+  - vladimir-chertkov
+themes:
+  - publishing
+  - popular education
+  - Tolstoyan movement
+identifiers:
+  wikidata: Q4380199
+fieldSources: {}
+---
+
+Prose content about this institution.
+```
+
+**Controlled values for `institutionType`:** `publisher` · `archive` · `museum` · `university` · `church` · `government` · `literary-society` · `other`
+
+---
+
+## Adaptation template
+
+```yaml
+---
+id: anna-karenina-1935-film
+recordStatus: draft
+type: adaptation
+title: Anna Karenina (1935 film)
+titleEn: Anna Karenina (1935 film)
+titleRu: ""
+description: "1935 American film adaptation starring Greta Garbo, directed by Clarence Brown."
+sourceWork: anna-karenina
+adaptationType: film
+year: "1935"
+director: "Clarence Brown"
+language: en
+country: "United States"
+relatedArticles:
+  - anna-karenina
+themes:
+  - film adaptation
+  - American reception of Tolstoy
+identifiers:
+  wikidata: Q272628
+fieldSources: {}
+---
+
+Prose content about this adaptation.
+```
+
+**Controlled values for `adaptationType`:** `film` · `television` · `stage` · `opera` · `ballet` · `radio` · `musical` · `graphic-novel` · `other`
+
+---
+
+## Critical work template
+
+```yaml
+---
+id: eikhenbaum-young-tolstoy
+recordStatus: draft
+type: criticalWork
+title: "The Young Tolstoy"
+titleEn: "The Young Tolstoy"
+titleRu: "Молодой Толстой"
+description: "Boris Eikhenbaum's 1922 formalist study of Tolstoy's early literary development."
+author: "Boris Eikhenbaum"
+publicationDate: "1922"
+language: ru
+subjectWorks:
+  - childhood
+  - sevastopol-sketches
+  - the-cossacks
+relatedArticles:
+  - leo-tolstoy
+themes:
+  - literary criticism
+  - Russian formalism
+identifiers:
+  wikidata: ""
+fieldSources: {}
+---
+
+Prose content about this critical work.
+```
+
+---
+
+## Archival fond template
+
+```yaml
+---
+id: gmt-fond-1
+recordStatus: draft
+type: archivalFond
+title: "GMT Fond 1"
+titleEn: "GMT Fond 1 — Manuscripts of Leo Tolstoy"
+titleRu: "ГМТ Фонд 1 — Рукописи Л.Н. Толстого"
+description: "Primary manuscript collection of Leo Tolstoy at the State Museum of Leo Tolstoy, Moscow."
+repository: "State Museum of Leo Tolstoy (GMT)"
+repositoryCity: "Moscow"
+repositoryCountry: "Russia"
+fondNumber: "1"
+opis: ""
+estimatedItems: 0
+dateRange: "1840s–1910"
+relatedArticles:
+  - leo-tolstoy
+themes:
+  - archives
+  - manuscripts
+identifiers:
+  wikidata: ""
+fieldSources: {}
+---
+
+Prose content about this archival fond.
+```
 
 ---
 
@@ -263,10 +454,38 @@ Last updated: 2026-04-06
 
 (none yet)
 
+## Translators
+
+(none yet)
+
+## Institutions
+
+(none yet)
+
+## Adaptations
+
+(none yet)
+
+## Critical Works
+
+(none yet)
+
+## Archival Fonds
+
+(none yet)
+
 ## Works
 
 - [[Anna Karenina]] — Novel (1878), genre: novel, status: draft
 - [[War and Peace]] — Novel (1869), genre: novel, status: draft
+
+## Letters
+
+(none yet)
+
+## Images
+
+(none yet)
 
 ## Sources
 
