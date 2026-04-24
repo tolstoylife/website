@@ -100,6 +100,9 @@ function parseFrontmatter(content) {
 
 const ISO_DATE_RE = /^\d{4}(-\d{2}(-\d{2})?)?$/;
 const KEBAB_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+// chapterUri format: urn:tolstoy-life:<work-slug>:<chapter-id>
+// See _generated/PWA/tl-pipeline-integration.md §8.1
+const CHAPTER_URN_RE = /^urn:tolstoy-life:([a-z0-9]+(?:-[a-z0-9]+)*):([a-z0-9]+(?:-[a-z0-9]+)*)$/;
 
 function validateDate(value, fieldName, errors, filePath) {
   if (value === "" || value === undefined) return;
@@ -123,7 +126,56 @@ function validateNulls(fm, errors, filePath) {
   }
 }
 
+// --- Uniqueness tracker for chapterUri (populated across the full walk) ---
+
+const chapterUrisSeen = new Map(); // chapterUri → first file path that declared it
+
 // --- Validators ---
+
+function validateChapterFile(filePath, content) {
+  const errors = [];
+  const fm = parseFrontmatter(content);
+  if (!fm) return errors;
+
+  const rel = relative(".", filePath);
+
+  // Null check
+  validateNulls(fm, errors, rel);
+
+  // Required chapter fields
+  if (!fm.work) errors.push(`${rel}: missing required field "work"`);
+  if (!fm.chapterUri) {
+    errors.push(`${rel}: missing required field "chapterUri" (see _generated/PWA/tl-pipeline-integration.md §8.1)`);
+    return errors;
+  }
+
+  // Format check
+  const match = fm.chapterUri.match(CHAPTER_URN_RE);
+  if (!match) {
+    errors.push(`${rel}: chapterUri "${fm.chapterUri}" is malformed — must match urn:tolstoy-life:<work-slug>:<chapter-id> (both kebab-case)`);
+    return errors;
+  }
+
+  // Work-slug in URI must match the work frontmatter field.
+  // This catches the common case of copy-pasting a URI from a different work
+  // and forgetting to update the slug.
+  const [, workSlugInUri] = match;
+  if (fm.work && workSlugInUri !== fm.work) {
+    errors.push(`${rel}: chapterUri work slug "${workSlugInUri}" does not match frontmatter work "${fm.work}"`);
+  }
+
+  // Global uniqueness check — record the URI or flag the collision.
+  // A collision means an annotation anchored at this URI would be ambiguous.
+  if (chapterUrisSeen.has(fm.chapterUri)) {
+    const firstSeen = chapterUrisSeen.get(fm.chapterUri);
+    errors.push(`${rel}: chapterUri "${fm.chapterUri}" already used by ${firstSeen} — URIs must be globally unique`);
+  } else {
+    chapterUrisSeen.set(fm.chapterUri, rel);
+  }
+
+  return errors;
+}
+
 
 function validateWikiFile(filePath, content) {
   const errors = [];
@@ -166,9 +218,11 @@ function validateWorkFile(filePath, content) {
 
   const rel = relative(".", filePath);
 
-  // Skip text chapter files (they have "work" and "chapter" fields, not "genre")
+  // Chapter files (have "work" and "chapter"/"part" fields, not "genre") are
+  // validated separately by validateChapterFile — the main walk below routes
+  // them there.
   if (fm.work && (fm.chapter !== undefined || fm.part !== undefined)) {
-    return errors;
+    return validateChapterFile(filePath, content);
   }
 
   // Null check
