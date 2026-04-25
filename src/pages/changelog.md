@@ -9,6 +9,14 @@ All notable changes to the tolstoy.life research platform are documented here.
 
 This project uses date-based versioning (`YYYY-MM-DD`). Entries are grouped by date and categorised as **New content**, **Improvements**, or **Corrections**.
 
+## 2026-04-25
+
+### Improvements
+
+- Split project documentation per the shared project template: `AGENTS.md` is the tool-agnostic source of truth, `CLAUDE.md` is a thin Claude-specific overlay, and `ROADMAP.md` carries the phase-by-phase plan
+- Operational documentation (architecture, PWA contracts, editorial principles, capacity planning) is now publicly browsable on the [GitHub repo](https://github.com/tolstoylife/tolstoy.life) under `docs/` — previously local-only
+- LightRAG: switched embedding model to `bge-m3` for stronger Russian-language retrieval ahead of the TEI ingestion phase
+
 ## 2026-04-13
 
 ### Improvements
