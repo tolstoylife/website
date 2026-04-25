@@ -7,7 +7,7 @@
  * differs, 2 on harness error.
  *
  * Why this exists: the PWA's work-version scheme (see
- * _generated/PWA/tl-pipeline-integration.md §3.2 and §4.6) derives a
+ * docs/pwa/tl-pipeline-integration.md §3.2 and §4.6) derives a
  * work's identity from the SHA-256 of its rendered output. If the same
  * source produces different bytes on successive builds, every work
  * appears to re-version on every build, the 3-version retention cap
@@ -113,7 +113,7 @@ function reportDiff(diff) {
   console.error('')
   console.error('Common non-determinism sources: embedded timestamps, filesystem')
   console.error('walk order, JSON key ordering, locale-dependent sort, random')
-  console.error('IDs, PID-based names. See _generated/PWA/tl-pipeline-integration.md §6.3.')
+  console.error('IDs, PID-based names. See docs/pwa/tl-pipeline-integration.md §6.3.')
 }
 
 async function main() {
