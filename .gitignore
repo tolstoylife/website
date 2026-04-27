@@ -18,10 +18,20 @@ src/_includes/scripts
 # Claude
 .claude
 
-# Obsidian
+# Obsidian — runtime state and vendored third-party code only;
+# vault config (app.json, appearance.json, *-plugins.json, graph.json) stays tracked.
 src/.obsidian/workspace.json
 src/.obsidian/workspace-mobile.json
 src/.obsidian/cache
+src/.obsidian/plugins
+src/.obsidian/themes
+
+# Stray Obsidian dirs accidentally created at the repo root
+# (the real vault is at src/, configured by src/.obsidian/app.json)
+/.obsidian/
+
+# Local-only design working notes
+src/_design/
 
 # Editor configs mm
 .nova
@@ -33,6 +43,3 @@ _backup
 
 # Local Netlify folder
 .netlify
-
-# Obsidian
-.obsidian
