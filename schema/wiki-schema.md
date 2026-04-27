@@ -1,7 +1,8 @@
 # wiki-schema.md — Wiki Article Schema
 
-> **Version:** 1.1 (2026-04-16)
+> **Version:** 1.2 (2026-04-27)
 > **Companion to:** `schema/tolstoy-works-schema.md` (v6) for work metadata.
+> **Changelog:** v1.2 (2026-04-27) — salvaged richer optional fields from the superseded v1 type-specific schemas (now archived under `schema/_archive/`). Added: `nameAlternatives`, `causeOfDeath`, `relationshipDescription`, `periodOfContact`, `authorityTier`, `occupation`, `religion`, `politicalViews`, `synopsis`, `worksAuthored/Translated/Edited/Transcribed` for persons; `nameAlternatives`, `placeType`, `city`, `coordinates.approximate`, `roleInTolstoyLife`, `periodOfAssociation`, `synopsis`, `worksWrittenHere` for places; `viaf`, `lccn`, `bnf` for person identifiers, `geonames`, `openStreetMap` for place identifiers. All additions are optional. v1.1 (2026-04-16) — added 5 wiki types (translator, institution, adaptation, criticalWork, archivalFond), added explicit `title` field, fixed companion ref.
 
 This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the source cards, index, and log files in `src/sources/`.
 
@@ -54,6 +55,10 @@ type: person
 title: Sophia Tolstaya
 titleEn: Sophia Tolstaya
 titleRu: Софья Андреевна Толстая
+nameAlternatives:
+  - name: "Sofya Andreyevna Bers"
+    type: maiden
+    language: en
 description: "Wife of Leo Tolstoy, diarist, and manuscript transcriber (1844–1919)."
 birthDate: "1844-10-03"
 birthDateOldStyle: "1844-09-21"
@@ -63,12 +68,31 @@ deathDateOldStyle: ""
 deathDateApproximate: false
 birthPlace: "Pokrovskoye-Streshnevo, Moscow, Russia"
 deathPlace: "Yasnaya Polyana, Tula Oblast, Russia"
+causeOfDeath: ""
 nationality: Russian
+religion: ""
+politicalViews: ""
 roles:
   - diarist
   - transcriber
   - photographer
+occupation:
+  - diarist
+  - transcriber
 relationToTolstoy: wife
+relationshipDescription: "Tolstoy's wife of 48 years; principal manuscript copyist and household manager."
+periodOfContact:
+  from: "1862"
+  to: "1910"
+  notes: ""
+authorityTier: 1
+synopsis: ""
+worksAuthored: []
+worksTranslated: []
+worksEdited: []
+worksTranscribed:
+  - anna-karenina
+  - war-and-peace
 relatedWorks:
   -
     id: anna-karenina
@@ -85,6 +109,8 @@ themes:
 identifiers:
   wikidata: Q2917962
   viaf: ""
+  lccn: ""
+  bnf: ""
 fieldSources:
   birthDate:
     -
@@ -98,6 +124,19 @@ Prose content about this person. All claims cite primary sources.
 Uses [[wikilinks]] to connect to other vault files.
 ```
 
+### Field notes for `person`
+
+- **`nameAlternatives`** (optional) — array of `{name, type, language}` entries for maiden names, aliases, common transliterations, or variants. `type` values: `maiden` · `alias` · `transliteration` · `variant`.
+- **`causeOfDeath`** (optional) — free text. Useful for figures where this is documented and historically relevant.
+- **`relationshipDescription`** (optional) — one-sentence summary of the relationship to Tolstoy.
+- **`periodOfContact`** (optional) — `{from, to, notes}`. ISO 8601 years or dates. Useful for non-family figures whose contact with Tolstoy is bounded.
+- **`authorityTier`** (optional, integer 1–3) — source authority tier. `1` = inner circle (Birukoff, Chertkov, family), `2` = trusted secondary, `3` = fact-check only. Helps weight conflicting claims.
+- **`occupation`** (optional, string array) — free keyword tags. Distinct from `roles` (which describes roles in relation to Tolstoy and his works); `occupation` is the person's general profession.
+- **`religion`**, **`politicalViews`** (optional, free text) — when documented and relevant to the person's relationship to Tolstoy.
+- **`synopsis`** (optional, 2–4 sentences) — biographical summary embedded in frontmatter for use by indexes and previews. The article body remains the canonical prose.
+- **`worksAuthored` / `worksTranslated` / `worksEdited` / `worksTranscribed`** (optional, string arrays of `id` slugs) — typed lists of associated works. Distinct from `relatedWorks`, which carries free-form `role` values.
+- **`identifiers.viaf` / `.lccn` / `.bnf`** (optional) — additional authority-file identifiers beyond Wikidata. Useful for scholars cross-referencing library catalogues.
+
 ---
 
 ## Place template
@@ -110,13 +149,31 @@ type: place
 title: Yasnaya Polyana
 titleEn: Yasnaya Polyana
 titleRu: Ясная Поляна
+nameAlternatives:
+  - name: "Bright Glade"
+    type: translation
+    language: en
 description: "Tolstoy's primary estate in Tula Oblast, Russia."
+placeType: estate
 country: Russia
 region: Tula Oblast
+city: Tula
 coordinates:
   lat: 54.0667
   lon: 37.5167
+  approximate: false
 significancePeriod: "1828–1910"
+roleInTolstoyLife: primary-residence
+periodOfAssociation:
+  from: "1828"
+  fromOldStyle: "1828"
+  to: "1910"
+  toOldStyle: "1910"
+  notes: "Birthplace and lifelong home, except for periods in Moscow and travels."
+synopsis: ""
+worksWrittenHere:
+  - war-and-peace
+  - anna-karenina
 relatedArticles:
   - leo-tolstoy
   - sophia-tolstaya
@@ -125,11 +182,25 @@ themes:
   - Russian literary landmarks
 identifiers:
   wikidata: Q830274
+  geonames: ""
+  openStreetMap: ""
 fieldSources: {}
 ---
 
 Prose content about this place.
 ```
+
+### Field notes for `place`
+
+- **`nameAlternatives`** (optional) — same shape as for persons. `type` values: `historical` · `transliteration` · `variant` · `translation`.
+- **`placeType`** (optional, controlled vocabulary) — `estate` · `city` · `town` · `village` · `region` · `country` · `building` · `room` · `station` · `monastery` · `other`. Use `building` or `room` for sub-locations within a larger place (e.g. Tolstoy's study within Yasnaya Polyana).
+- **`city`** (optional) — nearest city or town for non-urban places (estates, villages, stations).
+- **`coordinates.approximate`** (optional, boolean) — `true` when coordinates are estimated rather than verified.
+- **`roleInTolstoyLife`** (optional, controlled vocabulary) — `birthplace` · `primary-residence` · `writing-location` · `death-location` · `exile` · `visited` · `correspondence-destination` · `other`. Captures the place's specific significance.
+- **`periodOfAssociation`** (optional) — `{from, fromOldStyle, to, toOldStyle, notes}`. Date range of Tolstoy's primary association with the place. Use `fromOldStyle` and `toOldStyle` for pre-1918 dates.
+- **`synopsis`** (optional, 2–4 sentences) — frontmatter summary, parallel to person `synopsis`.
+- **`worksWrittenHere`** (optional, string array of `id` slugs) — works authored at this location.
+- **`identifiers.geonames` / `.openStreetMap`** (optional) — additional geographic identifiers beyond Wikidata. `openStreetMap` accepts node/way/relation IDs.
 
 ---
 
