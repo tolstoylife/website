@@ -31,7 +31,7 @@
  * documented in tokens/penpot-tokens.md.
  */
 
-import {readFile, writeFile} from 'node:fs/promises';
+import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
@@ -218,6 +218,8 @@ function countTokens(setObj) {
 }
 
 const dtcg = await build();
+// Ensure tokens/ exists on a fresh clone before writing.
+await mkdir(dirname(OUTPUT_PATH), {recursive: true});
 await writeFile(OUTPUT_PATH, JSON.stringify(dtcg, null, 2) + '\n', 'utf8');
 
 const lines = SET_ORDER.map((name) => `  ${name.padEnd(20)} ${String(countTokens(dtcg[name])).padStart(3)} tokens`);
