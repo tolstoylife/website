@@ -18,6 +18,9 @@ src/_includes/scripts
 # Claude
 .claude
 
+# oh-my-claudecode session state
+.omc/
+
 # Obsidian — runtime state and vendored third-party code only;
 # vault config (app.json, appearance.json, *-plugins.json, graph.json) stays tracked.
 src/.obsidian/workspace.json
