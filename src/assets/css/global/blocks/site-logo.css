@@ -15,13 +15,11 @@
 .logo svg {
   width: 1.15em;
   height: 1.2em;
-  /* fill: var(--color-base-darkest); */
   fill: var(--color-logo-icon);
 }
 
 .logo:hover svg,
 body.pageIndex .logo svg {
-  /* fill: var(--color-base-darkest); */
   fill: var(--color-orange-500);
   color: var(--color-text);
 }

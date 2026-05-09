@@ -39,7 +39,7 @@
   inset-inline-end: 0;
   inline-size: var(--nav-list-width);
   opacity: var(--nav-list-opacity);
-  transition: opacity 0.2 var(--nav-list-timing-function), visibility 0.2s ease-in-out;
+  transition: opacity 0.2s var(--nav-list-timing-function), visibility 0.2s ease-in-out;
   visibility: var(--nav-list-visibility);
 }
 
@@ -262,8 +262,8 @@ assumes that the button doesn’t exist without JS, making the list the first ch
 .mainnav ul:first-child [aria-current='page'],
 .mainnav ul:first-child [data-state='active'] {
   --nav-item-background: transparent;
-  --nav-item-text-color: var(--color-primary);
-  --nav-item-decoration-color: var(--color-primary);
+  --nav-item-text-color: var(--color-accent-orange);
+  --nav-item-decoration-color: var(--color-accent-orange);
 }
 
 /* make menu wrap without drawer */
