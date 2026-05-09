@@ -10,3 +10,4 @@ This `website/` directory is a submodule of `tolstoylife/tolstoy.life`. When wor
 - **Build** — `npm run build` (production), `npm start` (dev), `npm run test:a11y` (accessibility).
 - **Validators** — `.github/scripts/validate-frontmatter.mjs` enforces frontmatter rules and `chapterUri` format on every PR. `.github/scripts/check-determinism.mjs` runs the build twice and diffs output (non-blocking until current drifts resolve).
 - **Eleventy ignores** — `src/sources/` and `src/_staging/` excluded via `.eleventyignore`.
+- **Design tokens** — JSON sources in `src/_data/designTokens/`; `npm run penpot:tokens` regenerates `tokens/penpot-tokens.dtcg.json` and `../DESIGN.md`. Push to Penpot via MCP (preferred — `tolstoy.life - design tokens` file) or manual UI import. Full workflow + Plugin API gotchas: `../docs/design/penpot-tokens.md`. MCP server registration is in `.mcp.json`.
