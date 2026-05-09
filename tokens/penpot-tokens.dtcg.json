@@ -7,7 +7,7 @@
           "$type": "color"
         },
         "200": {
-          "$value": "#e3e5e7",
+          "$value": "#e3e4e7",
           "$type": "color"
         },
         "250": {
@@ -15,87 +15,91 @@
           "$type": "color"
         },
         "300": {
-          "$value": "#acaeb1",
+          "$value": "#adaeb0",
           "$type": "color"
         },
         "400": {
-          "$value": "#7d8085",
+          "$value": "#7e8084",
           "$type": "color"
         },
         "500": {
-          "$value": "#606368",
+          "$value": "#616368",
           "$type": "color"
         },
         "600": {
-          "$value": "#44484d",
+          "$value": "#45484d",
           "$type": "color"
         },
         "700": {
-          "$value": "#383b3f",
+          "$value": "#383a3f",
           "$type": "color"
         },
         "800": {
-          "$value": "#2b2e32",
+          "$value": "#2c2e31",
           "$type": "color"
         },
         "900": {
-          "$value": "#141619",
+          "$value": "#151619",
           "$type": "color"
         }
       },
-      "orange": {
+      "amber": {
         "100": {
-          "$value": "#ffece1",
+          "$value": "#f8f2de",
           "$type": "color"
         },
         "200": {
-          "$value": "#ffdec3",
+          "$value": "#faebbc",
           "$type": "color"
         },
         "300": {
-          "$value": "#ffb78a",
+          "$value": "#eacf7c",
           "$type": "color"
         },
         "400": {
-          "$value": "#f68f5a",
+          "$value": "#caab46",
           "$type": "color"
         },
         "500": {
-          "$value": "#d0621e",
+          "$value": "#a48200",
           "$type": "color"
         },
         "600": {
-          "$value": "#a73c00",
+          "$value": "#7f5e00",
           "$type": "color"
         },
         "700": {
-          "$value": "#8c2100",
+          "$value": "#684700",
           "$type": "color"
         },
         "800": {
-          "$value": "#711a00",
+          "$value": "#533800",
           "$type": "color"
         },
         "900": {
-          "$value": "#320100",
+          "$value": "#221300",
+          "$type": "color"
+        },
+        "tint": {
+          "$value": "#DDB840",
           "$type": "color"
         }
       },
       "base": {
         "darkest": {
-          "$value": "#495464",
+          "$value": "#272b30",
           "$type": "color"
         },
         "dark": {
-          "$value": "#bbbfca",
+          "$value": "#30353c",
           "$type": "color"
         },
         "light": {
-          "$value": "#dddee8",
+          "$value": "#dcd9d0",
           "$type": "color"
         },
         "lightest": {
-          "$value": "#f4f4f2",
+          "$value": "#e8e4db",
           "$type": "color"
         }
       }
@@ -105,24 +109,24 @@
     "color": {
       "semantic": {
         "red": {
-          "$value": "#644B49",
+          "$value": "#B83232",
           "$type": "color"
         },
         "blue": {
-          "$value": "#245375",
+          "$value": "#2362A0",
           "$type": "color"
         },
         "green": {
-          "$value": "#626449",
+          "$value": "#4A7C59",
           "$type": "color"
         }
       },
       "bg": {
-        "$value": "{color.base.lightest}",
+        "$value": "{color.base.light}",
         "$type": "color"
       },
       "bg-accent": {
-        "$value": "#ffffff",
+        "$value": "{color.base.lightest}",
         "$type": "color"
       },
       "bg-accent-2": {
@@ -147,24 +151,24 @@
     "color": {
       "semantic": {
         "red": {
-          "$value": "#614d4b",
+          "$value": "#ab433f",
           "$type": "color"
         },
         "blue": {
-          "$value": "#2f536e",
+          "$value": "#346294",
           "$type": "color"
         },
         "green": {
-          "$value": "#62644e",
+          "$value": "#537a5e",
           "$type": "color"
         }
       },
       "bg": {
-        "$value": "{color.gray.900}",
+        "$value": "{color.base.darkest}",
         "$type": "color"
       },
       "bg-accent": {
-        "$value": "{color.gray.700}",
+        "$value": "{color.base.dark}",
         "$type": "color"
       },
       "bg-accent-2": {

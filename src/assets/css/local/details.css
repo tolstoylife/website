@@ -41,13 +41,13 @@ is-land:not(:defined) .details .control {
 .details summary:hover,
 .details summary:focus-visible,
 .details[open] > summary {
-  color: var(--color-orange-500);
+  color: var(--color-amber-500);
 }
 
 .details summary::before {
   content: '+';
   display: block;
-  color: var(--color-accent-orange);
+  color: var(--color-accent-amber);
   font-family: var(--font-mono);
   font-size: var(--size-step-1);
   font-weight: var(--font-regular);

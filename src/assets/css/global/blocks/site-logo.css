@@ -20,7 +20,7 @@
 
 .logo:hover svg,
 body.pageIndex .logo svg {
-  fill: var(--color-orange-500);
+  fill: var(--color-amber-500);
   color: var(--color-text);
 }
 

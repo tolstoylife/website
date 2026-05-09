@@ -58,9 +58,9 @@
 
 /* Variants */
 .button[data-button-variant='primary'] {
-  --button-bg: var(--color-accent-orange);
+  --button-bg: var(--color-accent-amber);
   --button-color: var(--color-light);
-  --button-color: color-mix(in oklab, var(--color-accent-orange) 5%, var(--color-light));
+  --button-color: color-mix(in oklab, var(--color-accent-amber) 5%, var(--color-light));
 }
 
 .button[data-button-variant='secondary'] {
@@ -107,7 +107,7 @@
   --button-bg: var(--color-bg);
   --button-border-color: var(--color-bg);
   --button-color: var(--color-text);
-  --button-hover-color: var(--color-accent-orange);
+  --button-hover-color: var(--color-accent-amber);
   --button-radius: 50%;
   aspect-ratio: 1;
   display: inline-grid;

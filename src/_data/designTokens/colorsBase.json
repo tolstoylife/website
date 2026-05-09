@@ -2,23 +2,27 @@
   "title": "Colors",
   "description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print. neutral and vibrant colors are converted to color palettes, fixed colors are kept as they are",
   "palette": [
-    { "name": "base-darkest", "value": "#495464" },
-    { "name": "base-dark", "value": "#bbbfca" },
-    { "name": "base-light", "value": "#dddee8" },
-    { "name": "base-lightest", "value": "#f4f4f2" }
+    { "name": "base-darkest", "value": "#272b30" },
+    { "name": "base-dark", "value": "#30353c" },
+    { "name": "base-light", "value": "#dcd9d0" },
+    { "name": "base-lightest", "value": "#e8e4db" }
   ],
   "shades_neutral": [
-    { "name": "Gray", "value": "#495464" }
+    { "name": "Gray", "value": "#9ba3b4" }
   ],
   "shades_vibrant": [
-    { "name": "Orange", "value": "#EF7E40" }
+    { "name": "Amber", "value": "#B8960A" }
   ],
   "light_dark": [
-    { "name": "Red", "value": "#644B49" },
-    { "name": "Blue", "value": "#245375" },
-    { "name": "Green", "value": "#626449" }
+    { "name": "Red", "value": "#B83232" },
+    { "name": "Blue", "value": "#2362A0" },
+    { "name": "Green", "value": "#4A7C59" }
   ],
   "standalone": [
-    { "group": "gray", "label": "250", "value": "#C8CACC" }
+    { "group": "gray", "label": "250", "value": "#C8CACC" },
+    { "group": "amber", "label": "tint", "value": "#DDB840" },
+    { "group": "red", "label": "tint", "value": "#E06868" },
+    { "group": "green", "label": "tint", "value": "#7DBF92" },
+    { "group": "blue", "label": "tint", "value": "#5DA0DC" }
   ]
 }

@@ -4,7 +4,7 @@
 }
 
 .theme-switch .button[aria-pressed='true'] {
-  --_color-contrast: var(--color-orange-200);
+  --_color-contrast: var(--color-amber-200);
   --button-bg: var(--_color-contrast);
   --button-color: var(--color-dark);
   --button-hover-color: var(--color-dark);

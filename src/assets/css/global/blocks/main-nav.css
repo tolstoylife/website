@@ -160,7 +160,7 @@ body:has([data-drawer-toggle][aria-expanded='true']) {
 li:has(ul a[aria-current='page']) > [data-submenu-toggle] {
   --nav-item-background: var(--color-bg);
   --nav-item-text-color: var(--color-text);
-  --nav-item-decoration-color: var(--color-orange-500);
+  --nav-item-decoration-color: var(--color-amber-500);
 }
 
 /* sub menu */
@@ -219,7 +219,7 @@ li:has(ul a[aria-current='page']) > [data-submenu-toggle] {
   li:has(ul a[aria-current='page']) > [data-submenu-toggle] {
     --nav-item-background: transparent;
     --nav-item-text-color: var(--color-text);
-    --nav-item-decoration-color: var(--color-orange-500);
+    --nav-item-decoration-color: var(--color-amber-500);
   }
 
   .mainnav [data-submenu-toggle] {
@@ -262,8 +262,8 @@ assumes that the button doesn’t exist without JS, making the list the first ch
 .mainnav ul:first-child [aria-current='page'],
 .mainnav ul:first-child [data-state='active'] {
   --nav-item-background: transparent;
-  --nav-item-text-color: var(--color-accent-orange);
-  --nav-item-decoration-color: var(--color-accent-orange);
+  --nav-item-text-color: var(--color-accent-amber);
+  --nav-item-decoration-color: var(--color-accent-amber);
 }
 
 /* make menu wrap without drawer */
