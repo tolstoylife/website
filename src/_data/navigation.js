@@ -9,6 +9,10 @@ export default {
       url: '/wiki/'
     },
     {
+      text: 'Notes',
+      url: '/notes/'
+    },
+    {
       text: 'About',
       url: '/about/'
     }
