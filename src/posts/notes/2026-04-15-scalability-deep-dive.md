@@ -6,8 +6,6 @@ tags: [architecture]
 draft: false
 ---
 
-# Deep Dive: True Scale of a Complete Tolstoy Resource
-
 Report: 2026-04-15  
 Context: Follows up on the initial scalability report of the same date. This analysis digs into the "connective tissue" — data categories that don't fall neatly into the basic wiki/ and works/ buckets but are essential for a complete scholarly resource.
 

@@ -2,7 +2,7 @@
   "layout": "note",
   "tags": "posts",
   "category": "note",
-  "permalink": "/notes/{{ title | slugify }}/index.html",
+  "permalink": "/notes/{{ page.fileSlug | slugify }}/",
   "eleventyExcludeFromCollections": false,
   "excludeFromSitemap": false
 }

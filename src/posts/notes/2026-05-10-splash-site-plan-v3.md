@@ -6,8 +6,6 @@ tags: [design]
 draft: false
 ---
 
-# Splash site — plan (3)
-
 *Planning document for the tolstoy.life public homepage and documentation.*
 
 ---

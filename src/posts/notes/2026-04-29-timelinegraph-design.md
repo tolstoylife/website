@@ -6,8 +6,6 @@ tags: [superpowers]
 draft: false
 ---
 
-# timelinegraph — Design Spec
-
 A 2D knowledge-graph visualisation of Tolstoy's universe, intended for the landing page of [tolstoy.life](https://tolstoy.life). Combines a horizontal multi-lane timeline spine with an orbital cloud of related entities; uses Tolstoy's lifespan (1828–1910), divided into the four canonical periods, as the visual frame.
 
 This spec is the output of two research rounds (see [`projects/timelinegraph/RESEARCH.md`](../../../projects/timelinegraph/RESEARCH.md)) plus a structured brainstorming pass. It locks in the v1 design and serves as input to the implementation plan.

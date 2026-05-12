@@ -7,8 +7,6 @@ draft: false
 templateEngineOverride: md
 ---
 
-# Source mode — implementation recipe
-
 How to implement the toggle and rendering described in
 [`docs/editorial/source-mode.md`](../editorial/source-mode.md).
 

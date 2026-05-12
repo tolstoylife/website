@@ -6,8 +6,6 @@ tags: [design]
 draft: false
 ---
 
-# Splash site — plan (1)
-
 *Planning document for the tolstoy.life public splash site and documentation.*
 
 *Archived 2026-05-09: this is the pre-annotation version. Superseded by `splash-site-plan-revised.md` and the active plan at `docs/splash-site-plan.md`.*

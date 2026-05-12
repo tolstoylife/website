@@ -6,8 +6,6 @@ tags: [pwa]
 draft: false
 ---
 
-# Tolstoy e-reader: Stage 1 implementation plan
-
 The first real local-first step. This stage does not introduce annotations, sync, or CRDTs. It introduces one capability: a user can choose to download a work and have it available offline, forever, on the device they chose.
 
 This document assumes the architecture in `local-first-architecture.md` and is sized to be executed through `/ultraplan` when ready. It's written so a reviewer can read it linearly and know exactly what should exist after Stage 1 is shipped.

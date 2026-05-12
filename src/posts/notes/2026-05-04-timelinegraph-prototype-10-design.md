@@ -6,8 +6,6 @@ tags: [superpowers]
 draft: false
 ---
 
-# Prototype 10 — Split View Design
-
 A prototype-level design that breaks the **unified projection** model used in 07–09 (graph and time fused on a single canvas) into **separate, dedicated panels**: a pure force-directed graph on the left, a narrow vertical timeline strip in the middle, and a stub-text panel on the right. The motivation is the complexity problem flagged at the end of prototype 09 — five visual signals (period bands, lane separators, work bars, edge web, varying-size nodes) competing for attention on the same canvas. Prototype 10 separates concerns: the graph shows topology, the timeline shows time, the panel shows content, and they coordinate by selection.
 
 This document is **not** an amendment to the canonical spec ([`2026-04-29-timelinegraph-design.md`](./2026-04-29-timelinegraph-design.md)). The canonical spec describes the unified-projection v1 design and is itself overdue for an amendment after 07–09's divergences (anisotropic Y-zoom, degree-based sizing, always-on edges, two-tier collapse). Prototype 10 is a *bigger* divergence still: graph and time become physically separate components. If 10 confirms the new direction, the canonical spec gets rewritten in a follow-up pass.

@@ -6,8 +6,6 @@ tags: [architecture]
 draft: false
 ---
 
-# Wiki Rewrite Workflow at Scale
-
 Report: 2026-04-15  
 Context: How do we keep 26,500+ wiki pages accurate and cross-referenced as new sources are ingested? The current approach (Claude reads everything sequentially) breaks down past ~5,000 files. This document designs the scaled workflow, separates what needs Claude from what can be scripted, and estimates the token costs.
 

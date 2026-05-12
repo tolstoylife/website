@@ -6,8 +6,6 @@ tags: [design, development]
 draft: false
 ---
 
-# docs/ → dev blog migration plan
-
 Reframe `docs/` from a documentation hub into a dated build log. Move
 evergreen reference material to the real website at `website/`. Keep
 `docs/` as the chronological record of what was tried, what was decided,

@@ -6,8 +6,6 @@ tags: [architecture]
 draft: false
 ---
 
-# LightRAG Performance Report — Mac Mini M4 24GB
-
 Report: 2026-04-18
 Context: First operational test of LightRAG on the Tolstoy Research Platform. This report documents the hardware findings, model benchmarks, configuration decisions, and ingestion time estimates for scaling from the current 29-file vault to the projected 26,500-file full corpus.
 
