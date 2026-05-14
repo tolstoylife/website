@@ -422,7 +422,7 @@ The frontmatter currently defines 13 component entries (`body`, `body-dark`, `he
 
 **Don't:**
 
-- **Don't create page-specific stylesheets** (e.g. `local/homepage.css`) without flagging the need in [`docs/splash-site-plan.md`](../docs/splash-site-plan.md) and justifying it. Reuse `global/blocks/` first.
+- **Don't create page-specific stylesheets** (e.g. `local/homepage.css`) without an explicit reason. Reuse `global/blocks/` first.
 - **Don't add box-shadows for elevation.** Use the `bg-accent` / `bg-accent-2` token pair.
 - **Don't assume orange.** The Amber slot was renamed from Orange in Task 1b (2026-05-09). All `--color-orange-*` and `--color-accent-orange` references are gone — refer to `--color-amber-*` or `--color-accent-amber`.
 - **Don't ship red/green-distinguished UI without colour-blindness review.** The primary maintainer has deuteranopia; pair every red/green distinction with shape, label, or position.
