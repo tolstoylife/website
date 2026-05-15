@@ -6,6 +6,7 @@ src/_staging
 
 # generated files
 dist
+_site
 src/_includes/css
 src/_includes/scripts
 
@@ -14,6 +15,7 @@ src/_includes/scripts
 
 # secret data
 .env
+.env.local
 
 # Claude
 .claude

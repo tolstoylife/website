@@ -1,5 +1,6 @@
 ---
 title: Sustainability
+description: 'Carbon footprint and energy profile of tolstoy.life.'
 layout: page
 eleventyExcludeFromCollections: true
 excludeFromSitemap: true
