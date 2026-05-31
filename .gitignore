@@ -9,6 +9,8 @@ dist
 _site
 src/_includes/css
 src/_includes/scripts
+# interlinker dead-link report (deadLinkReport: 'json')
+.dead-links.json
 
 # cache
 .cache
