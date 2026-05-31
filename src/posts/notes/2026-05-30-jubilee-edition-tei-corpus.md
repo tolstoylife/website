@@ -6,7 +6,7 @@ tags:
   - notes
   - research
   - tolstoy
-draft: true
+draft: false
 ---
 
 Almost every Russian word on this site comes, at one or two removes, from two artifacts. This dive documents both.
