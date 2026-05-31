@@ -11,7 +11,7 @@ titleEn: ABC Book
 titleAlternatives: []
 mainCategory: Fiction
 subcategory: Childrens Literature
-genre: fragment
+genre: primer
 language: ru
 completionStatus: complete
 publishedDuringLifetime: false
