@@ -19,6 +19,6 @@ Three moments carry it, all from the prophet period:
 
 The phrase itself was a movement's before it was his: a term of art among his correspondents — Schmitt, Kenworthy, Davidson, Crosby, Ortt — through the 1890s, consolidated by Chertkov's 1905 booklet *O khristianskom anarkhizme*.
 
-The full survey — staged quotes with working-English translations, the cluster maps, the scholarly context, the page facsimiles, and a machine-readable dossier — is at `docs/research/christian-anarchism/index.md`. Every Russian quote (and Tolstoy's own French and German) is byte-checked against the source extracts. The dive feeds the wiki's `Christian Anarchism` page, which currently flags this exact rejection as needing a primary source; ingestion is a separate, human step.
+The full survey — staged quotes with working-English translations, the cluster maps, the scholarly context, the page facsimiles, and a machine-readable dossier — is at [`docs/research/christian-anarchism/index.md`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/christian-anarchism/index.md). Every Russian quote (and Tolstoy's own French and German) is byte-checked against the source extracts. The dive feeds the wiki's `Christian Anarchism` page, which currently flags this exact rejection as needing a primary source; ingestion is a separate, human step.
 
 *This note is part of an occasional series documenting primary-source dives into the Tolstoy corpus.*

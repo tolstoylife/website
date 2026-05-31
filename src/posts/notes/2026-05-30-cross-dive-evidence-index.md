@@ -37,4 +37,4 @@ The current run covers 5 dives, 41 distinct entities, 41 evidence rows, and 46 v
 
 Two sections do the work. An **ingestion work-order** ranks the entities that have verified evidence but no written page yet — the things ready to write, citations attached. An **integrity report** flags the inconsistencies worth resolving before ingestion: a name spelled two ways across dives (Birukoff / Biryukov), a person typed inconsistently (Maude as person in one dive, translator in another), and entities named but not yet evidenced.
 
-The index lives at `docs/research/evidence-index/`. Regenerate it with `python3 docs/research/lib/build_evidence_index.py`, then `python3 docs/serve.py --build-only` to render the HTML.
+The index lives at [`docs/research/evidence-index/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/evidence-index/index.md). Regenerate it with `python3 docs/research/lib/build_evidence_index.py`, then `python3 docs/serve.py --build-only` to render the HTML.
