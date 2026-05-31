@@ -6,7 +6,6 @@ tags:
   - notes
   - research
   - tolstoy
-permalink: false
 draft: true
 ---
 
