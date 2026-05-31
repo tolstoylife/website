@@ -28,10 +28,16 @@ const WORKS_DIR = join(SRC, "works");
 // --- Controlled vocabularies ---
 
 const RECORD_STATUSES = ["draft", "reviewed", "verified"];
-const WIKI_TYPES = ["person", "place", "event", "concept"];
+// Full set per schema/wiki-schema.md v1.3 (was 4 types pre-2026-05-31; v1.1
+// added 5, v1.3 added `edition` — the validator had drifted behind the doc).
+const WIKI_TYPES = [
+  "person", "place", "event", "concept", "translator", "institution",
+  "adaptation", "criticalWork", "archivalFond", "edition",
+];
 const GENRES = [
   "novel", "novella", "short_story", "parable", "play", "essay",
   "philosophical", "religious", "diary", "letter", "poem", "fragment",
+  "primer", "anthology",
 ];
 const COMPLETION_STATUSES = ["complete", "incomplete", "fragmentary"];
 const VENUE_TYPES = ["journal", "newspaper", "book", "samizdat"];

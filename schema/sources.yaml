@@ -129,6 +129,20 @@ sources:
     dateAccessed: ""
     notes: "Digitised editions and scans."
 
+  - id: "tolstoydigital-tei"
+    type: "database"
+    name: "Tolstoy Digital — TEI/XML corpus (Слово Толстого / HSE)"
+    url: "https://github.com/tolstoydigital/TEI"
+    dateAccessed: ""
+    notes: >
+      TEI/XML encoding of the 90-volume Jubilee Edition by the Tolstoy Digital
+      project (HSE, 2015–2022): works, letters, diaries, plus the reference files
+      (personList — 3,113 persons; locationList — 385 places; bibllist_works;
+      taxonomy; Dictionary; listMedia). Licensed CC BY-SA, granted in each file's
+      TEI <availability> header (not a repo-level LICENSE — header-scoped). Local
+      clone: primary-sources/tolstoydigital-TEI/. When citing, give the file path
+      and element; verify any verbatim Russian against the source PSS PDF.
+
   # ── Primary Sources ────────────────────────────────────────
 
   - id: "sophia-diary"

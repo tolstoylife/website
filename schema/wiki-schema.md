@@ -1,18 +1,18 @@
 # wiki-schema.md — Wiki Article Schema
 
-> **Version:** 1.2 (2026-04-27)
+> **Version:** 1.3 (2026-05-31)
 > **Companion to:** `schema/tolstoy-works-schema.md` (v6) for work metadata.
-> **Changelog:** v1.2 (2026-04-27) — salvaged richer optional fields from the superseded v1 type-specific schemas (now archived under `schema/_archive/`). Added: `nameAlternatives`, `causeOfDeath`, `relationshipDescription`, `periodOfContact`, `authorityTier`, `occupation`, `religion`, `politicalViews`, `synopsis`, `worksAuthored/Translated/Edited/Transcribed` for persons; `nameAlternatives`, `placeType`, `city`, `coordinates.approximate`, `roleInTolstoyLife`, `periodOfAssociation`, `synopsis`, `worksWrittenHere` for places; `viaf`, `lccn`, `bnf` for person identifiers, `geonames`, `openStreetMap` for place identifiers. All additions are optional. v1.1 (2026-04-16) — added 5 wiki types (translator, institution, adaptation, criticalWork, archivalFond), added explicit `title` field, fixed companion ref.
+> **Changelog:** v1.3 (2026-05-31) — added the `edition` wiki type (10th type) for published editions of Tolstoy's works (e.g. the Jubilee Edition, the in-progress IMLI academic PSS). Distinct from `institution` (the publisher or DH project), `criticalWork` (scholarship *about* Tolstoy), the per-work `editions[]` sidecar in the works schema (publication history of a single work), and a `sources.yaml` citation id. Also reconciled `.github/scripts/validate-frontmatter.mjs` `WIKI_TYPES`, which still listed only the original four types. v1.2 (2026-04-27) — salvaged richer optional fields from the superseded v1 type-specific schemas (now archived under `schema/_archive/`). Added: `nameAlternatives`, `causeOfDeath`, `relationshipDescription`, `periodOfContact`, `authorityTier`, `occupation`, `religion`, `politicalViews`, `synopsis`, `worksAuthored/Translated/Edited/Transcribed` for persons; `nameAlternatives`, `placeType`, `city`, `coordinates.approximate`, `roleInTolstoyLife`, `periodOfAssociation`, `synopsis`, `worksWrittenHere` for places; `viaf`, `lccn`, `bnf` for person identifiers, `geonames`, `openStreetMap` for place identifiers. All additions are optional. v1.1 (2026-04-16) — added 5 wiki types (translator, institution, adaptation, criticalWork, archivalFond), added explicit `title` field, fixed companion ref.
 
 This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the source cards, index, and log files in `src/sources/`.
 
-Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, concepts, translators, institutions, adaptations, critical works, and archival fonds.
+Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, concepts, translators, institutions, adaptations, critical works, archival fonds, and editions.
 
 ---
 
 ## Page types
 
-Every wiki article has a `type` field in its frontmatter. The nine types are:
+Every wiki article has a `type` field in its frontmatter. The ten types are:
 
 | Type | What it covers | Examples |
 |---|---|---|
@@ -25,6 +25,7 @@ Every wiki article has a `type` field in its frontmatter. The nine types are:
 | `adaptation` | Film, stage, and other adaptations | Anna Karenina (1935 film), War and Peace (1966 film) |
 | `criticalWork` | Major scholarly or critical works about Tolstoy | Shklovsky's *Tolstoy*, Eikhenbaum's *Young Tolstoy* |
 | `archivalFond` | Archival collections and fonds | GMT fond 1, RGB fond 304 |
+| `edition` | Published editions of Tolstoy's works (as bibliographic objects) | Jubilee Edition (Полное собрание сочинений), IMLI academic PSS, Free Age Press series |
 
 **Note on `translator` vs `person`:** Translators who are notable in their own right (e.g. Aylmer Maude, who was also a biographer and friend of Tolstoy) should use `type: person` with a `translator` role. The `translator` type is for individuals known primarily as translators, where the translation work is the main subject of the article.
 
@@ -451,6 +452,69 @@ fieldSources: {}
 
 Prose content about this archival fond.
 ```
+
+---
+
+## Edition template
+
+An `edition` article documents a **published edition of Tolstoy's works as a bibliographic object** — the edition itself is the subject (its editorial history, scope, principles, and reception), not any single work it contains.
+
+```yaml
+---
+id: jubilee-edition
+recordStatus: draft
+type: edition
+title: The Jubilee Edition
+titleEn: "The Jubilee Edition (Complete Collected Works)"
+titleRu: "Полное собрание сочинений (Юбилейное издание)"
+description: "The authoritative 90-volume scholarly edition of Tolstoy's complete works, diaries, and letters (1928–1958), with a 1964 index volume."
+editionType: complete-collected
+format: print
+editorInChief: vladimir-chertkov
+publisher: "Goslitizdat (Государственное издательство «Художественная литература»)"
+publisherCity: "Moscow"
+publicationStartDate: "1928"
+publicationStartDateOldStyle: ""
+publicationStartDateApproximate: false
+publicationEndDate: "1958"
+publicationEndDateOldStyle: ""
+publicationEndDateApproximate: false
+volumes: 90
+language: ru
+basedOn: "Tolstoy's manuscripts (GMT, RGB), diaries, and letters; a maximalist completeness principle"
+sourceId: jubilee-edition
+relatedArticles:
+  - vladimir-chertkov
+  - leo-tolstoy
+  - alexandra-tolstaya
+themes:
+  - textual scholarship
+  - Soviet-era publishing
+  - copyright renunciation
+identifiers:
+  wikidata: ""
+fieldSources: {}
+---
+
+Prose content about this edition.
+```
+
+**Controlled values for `editionType`:** `complete-collected` · `selected-works` · `academic-critical` · `popular` · `translation-series` · `other`
+
+**Controlled values for `format`:** `print` · `digital` · `both`
+
+### Field notes for `edition`
+
+- **`editionType`** (controlled vocabulary) — the kind of edition. `complete-collected` (e.g. the Jubilee Edition), `academic-critical` (e.g. the IMLI PSS), `popular` (cheap mass editions, e.g. Posrednik / Free Age Press), `selected-works`, `translation-series`, `other`. Distinct from the works-schema §8 `editionType` (`first`/`revised`/`collected-works`/…), which classifies a *single work's* publication record, not the edition as a whole.
+- **`format`** (controlled vocabulary) — `print`, `digital`, or `both`. Distinguishes the print Jubilee Edition from a digital edition such as the tolstoydigital TEI corpus.
+- **`editorInChief`** (optional) — wiki `id` slug of the editor-in-chief or general editor; use free text if they have no wiki page. For an editorial board, name the chief here and list the rest in prose.
+- **`publisher` / `publisherCity`** (optional) — the publishing house. When the publisher also warrants its own article, give it an `institution` page and link from `relatedArticles`.
+- **`publicationStartDate` / `publicationEndDate`** (optional) — the publication span. Use `...OldStyle` companions for pre-1918 dates and `...Approximate: true` for uncertain ones (per the frontmatter conventions above).
+- **`volumes`** (optional, integer) — number of volumes; `0` if not volume-based.
+- **`basedOn`** (optional, free text) — the textual/manuscript base and the editorial principle behind the edition.
+- **`sourceId`** (optional) — the matching `id` in `schema/sources.yaml` when the edition is *also* registered as a citable source (e.g. `jubilee-edition`, `tolstoydigital-tei`). This is the bridge between the edition-as-subject (this article) and the edition-as-citation (the sources library).
+
+**Note on `edition` vs adjacent models:** an `edition` is the whole published edition as a subject. It is distinct from (1) `institution` — the publisher or digital-humanities project that *produced* the edition; (2) `criticalWork` — scholarship written *about* Tolstoy; (3) the per-work `editions[]` array in `schema/tolstoy-works-schema.md` §8, which records the publication history of one individual work; and (4) a bare `sources.yaml` id, which is only a citation handle. A digital edition (e.g. the tolstoydigital TEI corpus) may be modelled as an `edition`, an `institution`, or both, depending on whether the article's subject is the encoded text or the project behind it.
 
 ---
 

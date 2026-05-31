@@ -2,7 +2,9 @@
 
 **Project:** tolstoy.life
 **Convention:** camelCase (YAML frontmatter)
-**Date:** 2026-04-16 (v6)
+**Date:** 2026-05-31 (v7)
+
+> **Changelog:** v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
 
 ---
 
@@ -39,7 +41,7 @@ titleAlternatives:
 
 | Field | Type | Required | Controlled Values |
 |---|---|---|---|
-| `genre` | string | ✓ | `novel` · `novella` · `short_story` · `parable` · `play` · `essay` · `philosophical` · `religious` · `diary` · `letter` · `poem` · `fragment` |
+| `genre` | string | ✓ | `novel` · `novella` · `short_story` · `parable` · `play` · `essay` · `philosophical` · `religious` · `diary` · `letter` · `poem` · `fragment` · `primer` · `anthology` |
 | `language` | string | ✓ | ISO 639-1, e.g. `ru` · `fr` |
 | `completionStatus` | string | ✓ | `complete` · `incomplete` · `fragmentary` |
 | `publishedDuringLifetime` | boolean | ✓ | `true` if published anywhere (in any language) before Tolstoy's death (November 1910) |
@@ -52,6 +54,11 @@ completionStatus: "complete"
 publishedDuringLifetime: true
 publishedInRussiaDuringLifetime: true
 ```
+
+**Genre notes for the less-obvious values:**
+- `primer` — school readers / textbooks: *Азбука* (ABC Book), *Новая азбука*.
+- `anthology` — works compiled from others' writings arranged for reading: *Круг чтения* (Circle of Reading), *Путь жизни* (The Path of Life), *На каждый день* (For Every Day).
+- PSS editorial **comments** (the commentary apparatus around the texts) are **not** Tolstoy works and are not modelled here, even though the TEI taxonomy types them alongside works/letters/diaries.
 
 ---
 
