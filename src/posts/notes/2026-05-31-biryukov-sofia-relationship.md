@@ -6,7 +6,7 @@ tags: [notes, research]
 draft: true
 ---
 
-Volume II of Pavel Biryukov's authorized biography of Tolstoy opens, in 1908, with a strikingly warm dedication to Countess Sofia Andreevna Tolstaya: "You have held — and you still hold — a great and important place in your husband's eventful and anxiety-filled life. You have also averted much misfortune from his head." Biryukov was a committed Tolstoyan, an ally of Chertkov — the man Sofia would soon call her enemy. So why the tenderness? A reader sent two photographs (the dedication, dated Kostroma 11 January 1908, and the afterword, dated Ivanskoye 27 August 1908) and asked.
+Volume II of Pavel Biryukov's authorized biography of Tolstoy opens, in 1908, with a strikingly warm dedication to Countess Sofia Andreevna Tolstaya: "You have held — and you still hold — a great and important place in your husband's eventful and anxiety-filled life. You have also averted much misfortune from his head." Biryukov was Tolstoy's friend, biographer, and editor of the Posrednik press, and an ally of Chertkov — the editor on the opposing side of Sofia's struggle over Tolstoy's diaries and copyright. So why the tenderness? A reader sent two photographs (the dedication, dated Kostroma 11 January 1908, and the afterword, dated Ivanskoye 27 August 1908) and asked.
 
 The dive read the dedication against Tolstoy's own 173 letters to Biryukov, his diaries, and the scholarship. Three things came clear.
 
