@@ -55,7 +55,7 @@ export default async function(eleventyConfig) {
   eleventyConfig.addCollection('allWorks', getAllWorks);
 
   // ---------------------  Plugins
-  eleventyConfig.addPlugin(plugins.interlinker, { deadLinkReport: 'json' });
+  eleventyConfig.addPlugin(plugins.wikilinks, { deadLinkReport: 'json' });
 
   eleventyConfig.addPlugin(plugins.htmlConfig);
   eleventyConfig.addPlugin(plugins.drafts);

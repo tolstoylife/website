@@ -5,8 +5,9 @@ import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
 import webc from '@11ty/eleventy-plugin-webc';
 import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
 
-//obsidian style wikilinks
-import interlinker from "@photogabble/eleventy-plugin-interlinker";
+// obsidian-style wikilinks — parse-level resolution + pre-computed backlinks,
+// no render-pipeline re-entry (scales to the full vault). Replaces interlinker.
+import wikilinks from './plugins/wikilinks/index.js';
 
 // custom
 import { markdownLib } from './plugins/markdown.js';
@@ -24,5 +25,5 @@ export default {
   markdownLib,
   drafts,
   htmlConfig,
-  interlinker
+  wikilinks
 };
