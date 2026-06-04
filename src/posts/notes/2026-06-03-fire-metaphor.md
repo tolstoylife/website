@@ -6,7 +6,7 @@ tags:
   - notes
   - research
   - tolstoy
-draft: true
+draft: false
 ---
 
 Fire is being considered as an emblem for this site, so it was worth checking what Tolstoy actually did with the image. The answer is more pointed than "he liked fire metaphors."
