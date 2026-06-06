@@ -1,0 +1,20 @@
+---
+title: "What I Believe: the book that turned one verse into a war on the state"
+description: "A primary-source dive into Tolstoy's What I Believe (В чём моя вера?) as a work — its doctrine of non-resistance built on a single literal verse, its genesis in a letter and a nudge from Chertkov, and the 1884 ban that confiscated it but couldn't burn it — grounded in the Jubilee-Edition apparatus and the 1883 diaries and letters."
+date: 2026-06-06
+tags:
+  - notes
+  - research
+  - tolstoy
+draft: true
+---
+
+If *A Confession* is where Tolstoy the novelist becomes the preacher, *What I Believe* (В чём моя вера?) is where the preacher becomes the dissenter. It opens on the sentence the *Confession* dive closes with — «Пять лет тому назад я поверил в учение Христа» — and then does something the earlier book never tries: it builds a complete, binding ethic out of the Sermon on the Mount, and turns it against the courts, the army, the oath and the state. The corpus shows three things worth pulling out.
+
+**The whole book hangs on one verse, read literally.** Tolstoy's "key that opened everything" is Matthew 5:39, «не противься злу» — resist not evil — which he calls «центр тяжести всей мысли», the centre of gravity of the whole teaching. Read straight, it forbids not suffering but *violence* («никогда не делай насилия»); and from that single refusal he derives the rest — that a Christian cannot sit on a jury, swear an oath, or carry a rifle. He distils the Sermon on the Mount into five binding commandments (be not angry; abandon no spouse; swear no oaths; resist not evil; love all without national distinction), and argues on philological grounds that the word «напрасно» — "without cause," in "whosoever is angry *without cause*" — is a later interpolation smuggled in to soften the first one. This is the foundational text of what would later be called Christian anarchism — a label worth attributing to its users, not adopting.
+
+**The genesis is in the corpus twice over.** The doctrine was fixed before the book: a long letter to the young M. A. Engelhardt at the end of 1882 already lists the five commandments outright — «1) Не сердись; 2) Не блядуй; 3) Не клянись; 4) Не судись и 5) Не воюй» — and calls non-resistance «смыкающее звено всего учения». The push to turn it into a book "for the people" has a precise date in the 1883 diary: a letter from V. G. Chertkov, «вызывает написать о заповедях для народа» (9 March 1883). Then a year of stop-start drafting — «не могу продолжать свою статью. Тонкости, и потому будет ложь» — finished in Moscow on 22 January 1884.
+
+**It was banned but not burned — and the ban backfired.** Printed in about fifty copies at a deliberately steep price, it was prohibited outright on 14 February 1884 and thirty-nine copies were seized four days later. But the censors didn't destroy it: they carried it to Petersburg and read it. In Tolstoy's own words, *"banned; but not burned — taken to Petersburg, where those who banned it are sharing the copies among themselves and reading it. That is something at least."* The whole impounded edition dispersed into ministers' and courtiers' libraries; the rest of Russia read it in manuscript copies Tolstoy paid fifteen rubles to have made. It appeared first in print abroad (the French *Ma religion*, 1885), and legally in Russia only in 1906.
+
+The full dive — a twelve-chapter structural read of the text, the 1883 composition diaries and the 1882–84 letters, the genesis through Engelhardt and Chertkov, the redaction and title history, the ban and its dispersal, the translation lineage, a medium visual sweep (keystone: Ge's 1884 portrait of Tolstoy writing), and the scholarship and Church reception triangulated against the primary record — is here: [What I Believe (В чём моя вера?)](../../../../docs/research/1882-1884-what-i-believe/index.html). Every Russian quotation is checked byte-for-byte against its source (24/24). As with *A Confession*, the work has no record yet in the catalogue; the dive carries a source-grounded proposal to create one.
