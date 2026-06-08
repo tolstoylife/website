@@ -1,5 +1,5 @@
 ---
-title: "What Is Religion: written at Gaspra, under illness, nine days before the excommunication formula was settled"
+title: "What Is Religion: written at Gaspra under grave illness, its formula set down before the 1901 excommunication"
 description: "A primary-source dive into Tolstoy's Что такое религия и в чём сущность её? (1901–1902) — its genesis before the Holy Synod decree, its composition during his gravest illness at Gaspra, and the structural argument that the Church's specific innovation is institutional infallibility."
 date: 2026-06-07
 tags:
@@ -9,9 +9,9 @@ tags:
 draft: true
 ---
 
-*Что такое религия и в чём сущность её?* is not, as the standard framing has it, Tolstoy's response to the Holy Synod excommunication of February 1901. The corpus shows something more precise: the definitional formula at the centre of the essay was set down on 8 February 1901, nine days before the decree. The excommunication sharpened urgency; it did not determine the argument.
+*Что такое религия и в чём сущность её?* is not, as the standard framing has it, Tolstoy's response to the Holy Synod excommunication of February 1901. The corpus shows something more precise: the definitional formula at the centre of the essay was set down on 8 February 1901, about two weeks before the decree (22–24 February 1901, Old Style). The excommunication sharpened urgency; it did not determine the argument.
 
-**The formula came from rejecting a book.** On 8 February 1901 Tolstoy took up Chicherin's *Religion and Science*, called it "artificial constructions on a set theme," and wrote his own definition in the same diary entry: "It is such an establishment by man of his relation to the infinite, by which the purpose of his life is determined." The published text refines this twice more — relation to the *infinite life surrounding him*, binding his life *to that infinity* — but the structure is present at first articulation. The conception of religion as a *relation*, not a creed, a body, or a text, is what the whole comparative argument depends on.
+**The formula came from rejecting a book.** On 8 February 1901 Tolstoy took up Chicherin's *Science and Religion*, called it "artificial constructions on a set theme," and wrote his own definition in the same diary entry: "It is such an establishment by man of his relation to the infinite, by which the purpose of his life is determined." The published text refines this twice more — relation to the *infinite life surrounding him*, binding his life *to that infinity* — but the structure is present at first articulation. The conception of religion as a *relation*, not a creed, a body, or a text, is what the whole comparative argument depends on.
 
 **The composition happened at Gaspra during his gravest illness.** The essay was begun at Yasnaya Polyana in August 1901 and completed in Crimea, at the Panina estate at Gaspra, through an autumn and winter of pleurisy, typhoid, and pneumonia. On 12 August 1901 Tolstoy announced it to Chertkov in three words: «Надо торопиться» — I must hurry. On 14 September, already ill in Crimea with the drafts left behind at Yasnaya, he ranked it among the two things he would be "guilty" of leaving unfinished at death. The fact that it was written in these conditions — and finished — is one of the most compressed demonstrations of what Tolstoy meant by the essay's own moral obligation argument.
 
