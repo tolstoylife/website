@@ -1,18 +1,18 @@
 # wiki-schema.md — Wiki Article Schema
 
-> **Version:** 1.3 (2026-05-31)
+> **Version:** 1.4 (2026-06-09)
 > **Companion to:** `schema/tolstoy-works-schema.md` (v6) for work metadata.
-> **Changelog:** v1.3 (2026-05-31) — added the `edition` wiki type (10th type) for published editions of Tolstoy's works (e.g. the Jubilee Edition, the in-progress IMLI academic PSS). Distinct from `institution` (the publisher or DH project), `criticalWork` (scholarship *about* Tolstoy), the per-work `editions[]` sidecar in the works schema (publication history of a single work), and a `sources.yaml` citation id. Also reconciled `.github/scripts/validate-frontmatter.mjs` `WIKI_TYPES`, which still listed only the original four types. v1.2 (2026-04-27) — salvaged richer optional fields from the superseded v1 type-specific schemas (now archived under `schema/_archive/`). Added: `nameAlternatives`, `causeOfDeath`, `relationshipDescription`, `periodOfContact`, `authorityTier`, `occupation`, `religion`, `politicalViews`, `synopsis`, `worksAuthored/Translated/Edited/Transcribed` for persons; `nameAlternatives`, `placeType`, `city`, `coordinates.approximate`, `roleInTolstoyLife`, `periodOfAssociation`, `synopsis`, `worksWrittenHere` for places; `viaf`, `lccn`, `bnf` for person identifiers, `geonames`, `openStreetMap` for place identifiers. All additions are optional. v1.1 (2026-04-16) — added 5 wiki types (translator, institution, adaptation, criticalWork, archivalFond), added explicit `title` field, fixed companion ref.
+> **Changelog:** v1.4 (2026-06-09) — added the `character` (11th) and `group` (12th) wiki types, driven by the *Resurrection* and *Kreutzer Sonata* novel-dives, which had no home for fictional characters or real-world sects and routed Maslova / Nekhlyudov / Pozdnyshev / the Doukhobors / the Shakers as `concept` stopgaps. **`character`** = a fictional character in Tolstoy's works, minted as a standalone page only when it earns one (a *tiering rule*, below), and carrying a structured `prototypes[]` field — the real person(s) the character is modelled on, with `basis` and `certainty` evidence enums. This is the fiction→life edge (Levin ↔ Tolstoy, Maslova ↔ Rozalia Oni, Nekhlyudov ↔ Chertkov). **`group`** = a bounded real-world community (sect, people, ethnic group), distinct from `concept` (an idea or movement) and `institution` (an organisation). The reverse life→fiction direction is left to Obsidian backlinks (no reciprocal field added to `person`). Also reconciled `.github/scripts/validate-frontmatter.mjs` `WIKI_TYPES`. v1.3 (2026-05-31) — added the `edition` wiki type (10th type) for published editions of Tolstoy's works (e.g. the Jubilee Edition, the in-progress IMLI academic PSS). Distinct from `institution` (the publisher or DH project), `criticalWork` (scholarship *about* Tolstoy), the per-work `editions[]` sidecar in the works schema (publication history of a single work), and a `sources.yaml` citation id. Also reconciled `.github/scripts/validate-frontmatter.mjs` `WIKI_TYPES`, which still listed only the original four types. v1.2 (2026-04-27) — salvaged richer optional fields from the superseded v1 type-specific schemas (now archived under `schema/_archive/`). Added: `nameAlternatives`, `causeOfDeath`, `relationshipDescription`, `periodOfContact`, `authorityTier`, `occupation`, `religion`, `politicalViews`, `synopsis`, `worksAuthored/Translated/Edited/Transcribed` for persons; `nameAlternatives`, `placeType`, `city`, `coordinates.approximate`, `roleInTolstoyLife`, `periodOfAssociation`, `synopsis`, `worksWrittenHere` for places; `viaf`, `lccn`, `bnf` for person identifiers, `geonames`, `openStreetMap` for place identifiers. All additions are optional. v1.1 (2026-04-16) — added 5 wiki types (translator, institution, adaptation, criticalWork, archivalFond), added explicit `title` field, fixed companion ref.
 
 This document defines the structure, frontmatter templates, and conventions for wiki articles in `src/wiki/`. It also covers the source cards, index, and log files in `src/sources/`.
 
-Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, concepts, translators, institutions, adaptations, critical works, archival fonds, and editions.
+Works have their own schema (`schema/tolstoy-works-schema.md`). This file covers people, places, events, concepts, translators, institutions, adaptations, critical works, archival fonds, editions, characters, and groups.
 
 ---
 
 ## Page types
 
-Every wiki article has a `type` field in its frontmatter. The ten types are:
+Every wiki article has a `type` field in its frontmatter. The twelve types are:
 
 | Type | What it covers | Examples |
 |---|---|---|
@@ -26,8 +26,14 @@ Every wiki article has a `type` field in its frontmatter. The ten types are:
 | `criticalWork` | Major scholarly or critical works about Tolstoy | Shklovsky's *Tolstoy*, Eikhenbaum's *Young Tolstoy* |
 | `archivalFond` | Archival collections and fonds | GMT fond 1, RGB fond 304 |
 | `edition` | Published editions of Tolstoy's works (as bibliographic objects) | Jubilee Edition (Полное собрание сочинений), IMLI academic PSS, Free Age Press series |
+| `character` | Fictional characters in Tolstoy's works | Katyusha Maslova, Pozdnyshev, Konstantin Levin |
+| `group` | Real-world peoples, sects, and communities | Doukhobors, Shakers, Caucasus highlanders |
 
 **Note on `translator` vs `person`:** Translators who are notable in their own right (e.g. Aylmer Maude, who was also a biographer and friend of Tolstoy) should use `type: person` with a `translator` role. The `translator` type is for individuals known primarily as translators, where the translation work is the main subject of the article.
+
+**Note on `character` vs `person`:** A `character` is a fictional figure who exists inside a work (Maslova, Pozdnyshev, Levin); a `person` is a historical individual who existed in life. The connection between them — the real model a character is drawn from — is carried by the `character` type's `prototypes[]` field, *not* by conflating the two. A historical person who merely appears as themselves in a documentary passage stays a `person`.
+
+**Note on `group` vs `concept` vs `institution`:** A `group` is a bounded community of real people — a sect, a people, an ethnic group (Doukhobors, Shakers, the Caucasus highlanders). It is distinct from a `concept`, which is an *idea or movement* (Christian anarchism, non-resistance, the Tolstoyan movement as a body of thought), and from an `institution`, which is a formally organised body (a publisher, archive, museum, or church). The test: if it has members, a founding, and a geography, it is a `group`; if it is a system of ideas, it is a `concept`; if it is an organisation with an administrative structure, it is an `institution`.
 
 ---
 
@@ -518,6 +524,111 @@ Prose content about this edition.
 
 ---
 
+## Character template
+
+A `character` article documents a **fictional character in one (or more) of Tolstoy's works**. Its distinctive payload is the `prototypes[]` field: the real person(s) the character is drawn from, with the evidence basis and confidence recorded — the fiction→life edge that gives a character a reason to be a graph node rather than a line of prose on the work's page.
+
+```yaml
+---
+id: katyusha-maslova
+recordStatus: draft
+type: character
+title: Katyusha Maslova
+titleEn: Katyusha Maslova
+titleRu: Катюша Маслова
+description: "The heroine of Tolstoy's Resurrection (1899); a wronged servant-girl turned prisoner whose trial reopens Prince Nekhlyudov's conscience."
+appearsIn:
+  - resurrection
+roleInWork: protagonist
+prototypes:
+  -
+    person: ""
+    name: "Rozalia Oni"
+    basis: documented
+    certainty: probable
+    note: "The 1887 St Petersburg court case the jurist A. F. Koni told Tolstoy; the plot seed («Коневская повесть»)."
+    sourceId: ""
+relatedArticles:
+  - resurrection
+  - anatoly-koni
+themes:
+  - guilt and repentance
+  - prostitution and the courts
+identifiers:
+  wikidata: ""
+fieldSources: {}
+---
+
+Prose about the character: genesis, the prototype basis, and the character's role in the work. Hard facts and *attributed* attributions only — no literary interpretation (see Prose conventions).
+```
+
+### When a character earns its own page (the tiering rule)
+
+A 500-page novel has dozens of named figures; do **not** mint a page for each. Create a standalone `character` page only when the figure meets at least one of:
+
+1. **Principal or titular** — a protagonist, narrator, or title figure (Maslova, Nekhlyudov, Pozdnyshev, Hadji Murat).
+2. **Documented or attributed prototype** — there is a real model worth recording as a `prototypes[]` edge (this is the main reason the type exists).
+3. **Recurs across works** — the same character appears in more than one work.
+
+A figure that meets none of these folds into the work's own overview page (prose) or the principal character's page, and is left out of the entity manifest as a standalone node. Record the call in the dive's `needsReview` when it is a judgment call.
+
+### Field notes for `character`
+
+- **`appearsIn`** (required, string array of work `id` slugs) — the work(s) the character appears in. The array handles Tolstoy's reused names: when *the same* character recurs, list every work id on one page; when a name is reused for a *different* figure (e.g. the several distinct "Nekhlyudov"s across *A Landowner's Morning*, *Lucerne*, and *Resurrection*), give each its own page and disambiguate the title (`Dmitri Nekhlyudov (Resurrection)`).
+- **`roleInWork`** (controlled vocabulary) — `protagonist` · `principal` · `secondary` · `narrator` · `antagonist` · `titular`.
+- **`prototypes`** (optional, array) — the real person(s) the character is modelled on. Each entry:
+  - **`person`** — wiki `id` slug of the real person, or `""` if they have no page (yet).
+  - **`name`** — free-text name; always present, even when `person` is empty, so the model is named even before a page exists.
+  - **`basis`** (controlled vocabulary) — *how the attribution is known*: `author-stated` (Tolstoy named or acknowledged the model) · `autobiographical` (the character carries Tolstoy's own biography, e.g. Levin) · `editorial` (the PSS / Jubilee editors' conjecture) · `scholarly` (a later scholarly attribution) · `contemporary` (a memoirist or family member identified them).
+  - **`certainty`** (controlled vocabulary) — *confidence*: `documented` · `probable` · `conjectured`. Orthogonal to `basis`: an `editorial` attribution may be `probable` or `conjectured`; an `author-stated` one is `documented`. Never flatten a conjecture into a fact — a too-confident prototype link silently overclaims (cf. Levin ↔ Tolstoy, which is `autobiographical` + `probable`, never `author-stated`).
+  - **`note`** (free text) — the substance of the attribution.
+  - **`sourceId`** (optional) — the `sources.yaml` id attesting the attribution.
+- **Reverse direction:** there is deliberately **no** reciprocal field on `person`. The life→fiction direction (Tolstoy → Levin, Nekhlyudov, Pozdnyshev…) is served by Obsidian backlinks and `relatedArticles`, keeping the already-heavy `person` type lean.
+
+---
+
+## Group template
+
+A `group` article documents a **bounded real-world community** — a religious sect, a people, an ethnic group. Distinct from `concept` (an idea or movement) and `institution` (a formally organised body); see the disambiguation note under *Page types*.
+
+```yaml
+---
+id: doukhobors
+recordStatus: draft
+type: group
+title: Doukhobors
+titleEn: Doukhobors
+titleRu: Духоборцы
+description: "A Russian pacifist Christian sect; Tolstoy funded their 1898–1899 emigration to Canada with the fees from Resurrection."
+groupType: religious-sect
+originDate: ""
+originDateApproximate: false
+originPlace: "Russia"
+relatedArticles:
+  - resurrection
+  - leo-tolstoy
+  - vladimir-chertkov
+themes:
+  - sectarianism
+  - pacifism
+  - emigration
+identifiers:
+  wikidata: Q319099
+fieldSources: {}
+---
+
+Prose about the group: origin, beliefs, geography, and its documented relationship to Tolstoy and his works.
+```
+
+### Field notes for `group`
+
+- **`groupType`** (controlled vocabulary) — `religious-sect` · `ethnic-group` · `people` · `community` · `other`. Doukhobors and Shakers are `religious-sect`; the Caucasus highlanders are an `ethnic-group`.
+- **`originDate`** (optional) — founding or first-attestation date; use `...OldStyle` / `...Approximate` companions per the frontmatter conventions.
+- **`originPlace`** (optional, free text) — place of origin.
+- A `group` is the *community of people*. A doctrine the group holds (e.g. non-resistance, total chastity) is a separate `concept`; a publishing or administrative body it runs is an `institution`. Link across the three with `relatedArticles`.
+
+---
+
 ## Source card template — `src/sources/`
 
 Each major source gets a small `.md` stub in `src/sources/`. Source cards make sources visible in Obsidian's graph and wikilink-able from wiki articles and log entries. The binary file itself stays in `primary-sources/` at the project root.
@@ -606,6 +717,14 @@ Last updated: 2026-04-06
 (none yet)
 
 ## Archival Fonds
+
+(none yet)
+
+## Characters
+
+(none yet)
+
+## Groups
 
 (none yet)
 

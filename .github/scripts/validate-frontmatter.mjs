@@ -28,11 +28,12 @@ const WORKS_DIR = join(SRC, "works");
 // --- Controlled vocabularies ---
 
 const RECORD_STATUSES = ["draft", "reviewed", "verified"];
-// Full set per schema/wiki-schema.md v1.3 (was 4 types pre-2026-05-31; v1.1
-// added 5, v1.3 added `edition` — the validator had drifted behind the doc).
+// Full set per schema/wiki-schema.md v1.4 (was 4 types pre-2026-05-31; v1.1
+// added 5, v1.3 added `edition`, v1.4 added `character` + `group` — the
+// validator had drifted behind the doc).
 const WIKI_TYPES = [
   "person", "place", "event", "concept", "translator", "institution",
-  "adaptation", "criticalWork", "archivalFond", "edition",
+  "adaptation", "criticalWork", "archivalFond", "edition", "character", "group",
 ];
 const GENRES = [
   "novel", "novella", "short_story", "parable", "play", "essay",
