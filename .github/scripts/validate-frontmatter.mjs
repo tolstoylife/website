@@ -46,6 +46,18 @@ const DRAFT_LABELS = [
   "first-draft", "intermediate-draft", "final-draft", "fair-copy", "printers-copy",
 ];
 const CONDITIONS = ["good", "fair", "poor", "damaged", "lost"];
+// mainCategory → subcategory hierarchy. Mirrors schema/tolstoy-works-schema.md §2
+// and the works/<mainCategory>/<subcategory>/ directory taxonomy. Values are
+// recorded verbatim, including the irregular "Childrens Literature", "Poetry/Songs",
+// and the "Unfinished"/"Unfinished" echo (flagged in the schema doc for possible
+// later normalisation). Both fields are optional; the check only fires when set.
+const WORK_CATEGORIES = {
+  "Fiction": ["Novels", "Novellas", "Short Stories", "Sketches", "Childrens Literature"],
+  "Non-Fiction": ["Treatises", "Personal Papers", "Essays and Criticism", "Educational"],
+  "Plays": ["Drama", "Comedy"],
+  "Poetry and Songs": ["Poetry/Songs"],
+  "Unfinished": ["Unfinished"],
+};
 
 // --- Helpers ---
 
@@ -122,6 +134,32 @@ function validateEnum(value, fieldName, allowed, errors, filePath) {
   if (value === "" || value === undefined) return;
   if (!allowed.includes(value)) {
     errors.push(`${filePath}: ${fieldName} "${value}" is not in allowed values: ${allowed.join(", ")}`);
+  }
+}
+
+// Hierarchy-aware check for the organisational shelving fields. Both fields are
+// optional, so this is a no-op when mainCategory is absent. A subcategory set
+// without a mainCategory is flagged, since its valid set is parent-scoped.
+function validateWorkCategory(fm, errors, filePath) {
+  const main = fm.mainCategory;
+  const sub = fm.subcategory;
+  const hasMain = main !== undefined && main !== "";
+  const hasSub = sub !== undefined && sub !== "";
+
+  if (!hasMain) {
+    if (hasSub) {
+      errors.push(`${filePath}: subcategory "${sub}" set without a mainCategory`);
+    }
+    return;
+  }
+
+  const allowedSubs = WORK_CATEGORIES[main];
+  if (!allowedSubs) {
+    errors.push(`${filePath}: mainCategory "${main}" is not in allowed values: ${Object.keys(WORK_CATEGORIES).join(", ")}`);
+    return;
+  }
+  if (hasSub && !allowedSubs.includes(sub)) {
+    errors.push(`${filePath}: subcategory "${sub}" is not valid under mainCategory "${main}" — allowed: ${allowedSubs.join(", ")}`);
   }
 }
 
@@ -253,6 +291,7 @@ function validateWorkFile(filePath, content) {
   validateEnum(fm.completionStatus, "completionStatus", COMPLETION_STATUSES, errors, rel);
   validateEnum(fm.firstPublishedVenueType, "firstPublishedVenueType", VENUE_TYPES, errors, rel);
   validateEnum(fm.firstPublishedInRussiaVenueType, "firstPublishedInRussiaVenueType", VENUE_TYPES, errors, rel);
+  validateWorkCategory(fm, errors, rel);
 
   // Date fields
   const workDateFields = [

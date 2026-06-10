@@ -2,9 +2,9 @@
 
 **Project:** tolstoy.life
 **Convention:** camelCase (YAML frontmatter)
-**Date:** 2026-05-31 (v7)
+**Date:** 2026-06-09 (v8)
 
-> **Changelog:** v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
+> **Changelog:** v8 (2026-06-09) — documented two organisational fields already live on all 15 work-overview records but previously undocumented: `mainCategory` and `subcategory`. They mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case) and are distinct from `genre`. Controlled vocabularies derived from existing records and recorded verbatim, including three irregular values flagged for possible later normalisation (`Childrens Literature`, `Poetry/Songs`, `Unfinished`/`Unfinished`). Enum mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`. v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
 
 ---
 
@@ -41,6 +41,8 @@ titleAlternatives:
 
 | Field | Type | Required | Controlled Values |
 |---|---|---|---|
+| `mainCategory` | string | | Top-level shelving category — mirrors the first directory segment under `works/`. `Fiction` · `Non-Fiction` · `Plays` · `Poetry and Songs` · `Unfinished` |
+| `subcategory` | string | | Second-level shelving category within `mainCategory` — mirrors the second directory segment. Hierarchical; valid values depend on `mainCategory` (see table below) |
 | `genre` | string | ✓ | `novel` · `novella` · `short_story` · `parable` · `play` · `essay` · `philosophical` · `religious` · `diary` · `letter` · `poem` · `fragment` · `primer` · `anthology` |
 | `language` | string | ✓ | ISO 639-1, e.g. `ru` · `fr` |
 | `completionStatus` | string | ✓ | `complete` · `incomplete` · `fragmentary` |
@@ -48,6 +50,8 @@ titleAlternatives:
 | `publishedInRussiaDuringLifetime` | boolean | ✓ | `true` if legally published in Russia before Tolstoy's death (November 1910). `false` if banned or only published abroad. |
 
 ```yaml
+mainCategory: "Fiction"
+subcategory: "Novels"
 genre: "novel"
 language: "ru"
 completionStatus: "complete"
@@ -59,6 +63,20 @@ publishedInRussiaDuringLifetime: true
 - `primer` — school readers / textbooks: *Азбука* (ABC Book), *Новая азбука*.
 - `anthology` — works compiled from others' writings arranged for reading: *Круг чтения* (Circle of Reading), *Путь жизни* (The Path of Life), *На каждый день* (For Every Day).
 - PSS editorial **comments** (the commentary apparatus around the texts) are **not** Tolstoy works and are not modelled here, even though the TEI taxonomy types them alongside works/letters/diaries.
+
+**Category hierarchy (`mainCategory` → `subcategory`):**
+
+`mainCategory` and `subcategory` are the organisational shelving fields. They are distinct from `genre`: `genre` is the literary form of the work, while these two mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case). Both are present on every current work-overview record. `subcategory` is **scoped to its `mainCategory`** — the valid set depends on the parent:
+
+| `mainCategory` | Valid `subcategory` values |
+|---|---|
+| `Fiction` | `Novels` · `Novellas` · `Short Stories` · `Sketches` · `Childrens Literature` |
+| `Non-Fiction` | `Treatises` · `Personal Papers` · `Essays and Criticism` · `Educational` |
+| `Plays` | `Drama` · `Comedy` |
+| `Poetry and Songs` | `Poetry/Songs` |
+| `Unfinished` | `Unfinished` |
+
+Values are recorded verbatim from the existing records. Three are irregular against the surrounding Title-Case convention and are documented as-is, flagged here for a possible later normalisation: `Childrens Literature` (no apostrophe), `Poetry/Songs` (slash, unlike its parent `Poetry and Songs`), and `Unfinished`/`Unfinished` (parent and child identical). This enum is mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`.
 
 ---
 
@@ -582,6 +600,8 @@ titleAlternatives:
     language: ""
 
 # ── Type & Genre ─────────────────────────────────────────────
+mainCategory: ""
+subcategory: ""
 genre: ""
 language: "ru"
 completionStatus: ""
