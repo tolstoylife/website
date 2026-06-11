@@ -2,9 +2,9 @@
 
 **Project:** tolstoy.life
 **Convention:** camelCase (YAML frontmatter)
-**Date:** 2026-06-09 (v8)
+**Date:** 2026-06-11 (v9)
 
-> **Changelog:** v8 (2026-06-09) — documented two organisational fields already live on all 15 work-overview records but previously undocumented: `mainCategory` and `subcategory`. They mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case) and are distinct from `genre`. Controlled vocabularies derived from existing records and recorded verbatim, including three irregular values flagged for possible later normalisation (`Childrens Literature`, `Poetry/Songs`, `Unfinished`/`Unfinished`). Enum mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`. v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
+> **Changelog:** v9 (2026-06-11) — added a sixth `bans[].scope` value, `stage-ban` (theatrical performance prohibited while print/circulation remained permitted), closing a gap flagged by the *Power of Darkness* dive and re-exercised by the *Fruits of Enlightenment* dive: both plays were freely printed but barred from the public stage (any amateur-performance exemption goes in `bans[].notes`). `bans[].scope` is documentation-only (not enforced in `.github/scripts/validate-frontmatter.mjs`), so no validator change was needed. v8 (2026-06-09) — documented two organisational fields already live on all 15 work-overview records but previously undocumented: `mainCategory` and `subcategory`. They mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case) and are distinct from `genre`. Controlled vocabularies derived from existing records and recorded verbatim, including three irregular values flagged for possible later normalisation (`Childrens Literature`, `Poetry/Songs`, `Unfinished`/`Unfinished`). Enum mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`. v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
 
 ---
 
@@ -329,7 +329,7 @@ transcriptions:
 | `bans[].banningAuthority` | string | Full name of the authority that issued the ban |
 | `bans[].authorityType` | string | `imperial-state` · `holy-synod` · `foreign-government` · `periodical-editor` · `other` |
 | `bans[].jurisdiction` | string | Country or region where the ban applied, e.g. `Russia` · `United States` · `Russian Empire` |
-| `bans[].scope` | string | `complete-ban` · `passages-cut` · `serialization-refused` · `confiscation` · `pre-publication-rejected` |
+| `bans[].scope` | string | `complete-ban` · `passages-cut` · `serialization-refused` · `confiscation` · `pre-publication-rejected` · `stage-ban` (theatrical performance prohibited while print/circulation remained permitted — e.g. *The Power of Darkness*, *The Fruits of Enlightenment*; note any amateur-performance exemption in `bans[].notes`) |
 | `bans[].banDate` | string | Gregorian (NS). ISO 8601: date of ban |
 | `bans[].banDateOldStyle` | string | Julian (OS) date of ban |
 | `bans[].banDateApproximate` | boolean | `true` if exact ban date is uncertain |
