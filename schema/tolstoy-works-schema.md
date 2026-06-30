@@ -2,9 +2,9 @@
 
 **Project:** tolstoy.life
 **Convention:** camelCase (YAML frontmatter)
-**Date:** 2026-06-11 (v9)
+**Date:** 2026-06-30 (v10)
 
-> **Changelog:** v9 (2026-06-11) — added a sixth `bans[].scope` value, `stage-ban` (theatrical performance prohibited while print/circulation remained permitted), closing a gap flagged by the *Power of Darkness* dive and re-exercised by the *Fruits of Enlightenment* dive: both plays were freely printed but barred from the public stage (any amateur-performance exemption goes in `bans[].notes`). `bans[].scope` is documentation-only (not enforced in `.github/scripts/validate-frontmatter.mjs`), so no validator change was needed. v8 (2026-06-09) — documented two organisational fields already live on all 15 work-overview records but previously undocumented: `mainCategory` and `subcategory`. They mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case) and are distinct from `genre`. Controlled vocabularies derived from existing records and recorded verbatim, including three irregular values flagged for possible later normalisation (`Childrens Literature`, `Poetry/Songs`, `Unfinished`/`Unfinished`). Enum mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`. v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
+> **Changelog:** v10 (2026-06-30) — added `translationEditions[].readerDefault` (boolean): marks which published translation is the reader's-edition default — the one a reader opens by default when several English translations exist. Set in light-prep when a work's sidecar is first authored; at most one `true` per work, omitted/false on the rest. Sidecar-only and documentation-only (no `.github/scripts/validate-frontmatter.mjs` change, matching the §8 sidecar convention). Introduced by the interactive reader-editions workflow, where the works tracker reads this flag for its "canonical translation" column. v9 (2026-06-11) — added a sixth `bans[].scope` value, `stage-ban` (theatrical performance prohibited while print/circulation remained permitted), closing a gap flagged by the *Power of Darkness* dive and re-exercised by the *Fruits of Enlightenment* dive: both plays were freely printed but barred from the public stage (any amateur-performance exemption goes in `bans[].notes`). `bans[].scope` is documentation-only (not enforced in `.github/scripts/validate-frontmatter.mjs`), so no validator change was needed. v8 (2026-06-09) — documented two organisational fields already live on all 15 work-overview records but previously undocumented: `mainCategory` and `subcategory`. They mirror the `works/<mainCategory>/<subcategory>/` directory taxonomy (Title Case) and are distinct from `genre`. Controlled vocabularies derived from existing records and recorded verbatim, including three irregular values flagged for possible later normalisation (`Childrens Literature`, `Poetry/Songs`, `Unfinished`/`Unfinished`). Enum mirrored, hierarchy-aware, in `.github/scripts/validate-frontmatter.mjs`. v7 (2026-05-31) — added two `genre` values: `primer` (school readers — *Азбука*, *Новая азбука*) and `anthology` (compiled-readings works — *Круг чтения*, *Путь жизни*, *На каждый день*). Previously *Азбука* was shoe-horned into `genre: fragment`. PSS editorial *comments* (commentary apparatus) are **not** works and are not modelled here. Genre enum mirrored in `.github/scripts/validate-frontmatter.mjs`.
 
 ---
 
@@ -426,6 +426,7 @@ Publication history — all known Russian editions and foreign translations. The
 | `translationEditions[].city` | string | City of publication |
 | `translationEditions[].title` | string | Title in target language |
 | `translationEditions[].notes` | string | Free text |
+| `translationEditions[].readerDefault` | boolean | The reader's-edition default — the one published translation a reader opens by default for this work. At most one `true` per work; omitted/false on the rest. Set in light-prep; documentation-only (not validator-enforced). |
 
 ```yaml
 editions:
@@ -447,6 +448,7 @@ translationEditions:
     city: "London"
     title: "Anna Karenina"
     notes: "First widely-read English translation"
+    readerDefault: true   # the reader's-edition default; at most one true per work
 ```
 
 ---
