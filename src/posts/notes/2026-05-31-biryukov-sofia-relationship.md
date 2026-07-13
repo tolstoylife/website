@@ -16,4 +16,4 @@ The dedication and a famous silence are two faces of the same deference. The lov
 
 And the "lines Sofia removed from the diary about the will"? On the evidence, that framing needs correcting. The 1895 diary testament survives complete; its one break is Tolstoy's own trailing-off, its one deletion (his daughters' names) his own hand. What Sofia actually did was veto the Arsenyeva letters and, in October 1910, seize Tolstoy's secret diary, fearing it confirmed a will assigning his copyrights to Chertkov ("It turns out she found and carried off my little diary"). The diaries' will-and-copyright cuts were Chertkov's, in his 1916 edition — not Sofia's quiet excision.
 
-Full write-up, with verbatim sources and translations: [the dive index](/docs/research/biryukov-sofia-relationship/) (research notes; ingestion into the wiki is a separate step).
+Full write-up, with verbatim sources and translations: [the dive index](/docs/research/themes/biryukov-sofia-relationship/) (research notes; ingestion into the wiki is a separate step).

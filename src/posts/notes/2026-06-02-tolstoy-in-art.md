@@ -21,4 +21,4 @@ The paradox sits in his own treatise. The most-portrayed man of the century, wri
 
 On rights, the news is good and simple: every artist here died before 1955, so the works are public domain in Russia and the US. The obstacle is not copyright but the holding museums, which restrict and charge for their own photographs of these public-domain works. Some images are superb and free (Repin's "Tolstoy Barefoot" survives as a 2281×6490 scan); others — Yaroshenko, Serov, the Trubetskoy sculptures — are absent from open repositories and must be requested from the institutions that hold them.
 
-Full dive, with byte-faithful quotes, a dated work-by-work catalogue, holdings, reproduction quality and rights: [docs/research/tolstoy-in-art/index.md](../../../docs/research/tolstoy-in-art/index.md).
+Full dive, with byte-faithful quotes, a dated work-by-work catalogue, holdings, reproduction quality and rights: [docs/research/_meta/tolstoy-in-art/index.md](../../../docs/research/_meta/tolstoy-in-art/index.md).

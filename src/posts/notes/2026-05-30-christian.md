@@ -21,4 +21,4 @@ Yet he did not abandon Christianity. He kept and redefined "true Christianity" �
 
 So the hunch that the church-coding of the word would push him to reframe rather than claim it holds — with the important qualification that he reframes rather than simply rejects: he strips the word of its institutional meaning and keeps only what is left.
 
-Full evidence, with every Russian quotation verified verbatim against the source text, is in the research dossier: [Christian — the label in Tolstoy's own reply](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/christian/index.md).
+Full evidence, with every Russian quotation verified verbatim against the source text, is in the research dossier: [Christian — the label in Tolstoy's own reply](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/christian/index.md).

@@ -21,4 +21,4 @@ draft: true
 
 **Tolstoy's own verdict was split but firm.** A reader reproached him for the essay's anger, and he agreed about the tone while standing by the substance without reservation: "I am at fault that the tone, the spirit of my article is unkind, but its meaning is, for me, undoubtedly true, and I will repeat the same on my deathbed" (1 July 1904). The diaries catch the same split a few weeks earlier — doubt that he had only "stirred up enmity," giving way, at the sight of the conscripts' wives, to regret that he had written "too little, too weakly."
 
-*This note accompanies a full primary-source research dive (`docs/research/1904-bethink-yourselves/`) — a cited index, a byte-verified evidence dossier, and the composition record from the 1904 diaries and letters.*
+*This note accompanies a full primary-source research dive (`docs/research/works/non-fiction/essays-and-criticism/1904-bethink-yourselves/`) — a cited index, a byte-verified evidence dossier, and the composition record from the 1904 diaries and letters.*

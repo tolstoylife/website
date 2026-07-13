@@ -14,4 +14,4 @@ The genesis is a study in ambivalence. The diary and his letters to Chertkov rec
 
 Banned in Russia, it appeared abroad first — in French (May 1894), then English and German — and circulated at home in underground hectographs until the first legal Russian printing in 1906, for which the publisher was prosecuted. It is the first of Tolstoy's three escalating anti-patriotism statements and the bridge from the religious treatises of the 1880s to the anti-war essays of the 1900s.
 
-The full dive — argument, genesis, the thirty-nine redactions, the publication and censorship history, the visual record, and the scholarly context — is here: [Christianity and Patriotism — a corpus work-dive](../../../../docs/research/1893-1894-christianity-and-patriotism/index.md).
+The full dive — argument, genesis, the thirty-nine redactions, the publication and censorship history, the visual record, and the scholarly context — is here: [Christianity and Patriotism — a corpus work-dive](../../../../docs/research/works/non-fiction/essays-and-criticism/1893-1894-christianity-and-patriotism/index.md).

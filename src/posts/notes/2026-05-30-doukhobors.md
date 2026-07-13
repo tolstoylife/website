@@ -18,4 +18,4 @@ Three things the re-run added:
 
 One correction the primary record makes to the popular story: *Resurrection* money mattered, but it was one of three comparable funding streams (alongside the English Quakers and the Doukhobors' own savings), not the whole of it — and Tolstoy himself later doubted whether money had been the right instrument at all.
 
-The full survey, with byte-faithful Russian quotations and working English translations, is in [`docs/research/doukhobors/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/doukhobors/index.md) (`index.md` and `dossier.yaml`).
+The full survey, with byte-faithful Russian quotations and working English translations, is in [`docs/research/themes/doukhobors/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/doukhobors/index.md) (`index.md` and `dossier.yaml`).

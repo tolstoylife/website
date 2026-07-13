@@ -16,4 +16,4 @@ Its greatest afterlife is one reader: the young M. K. Gandhi, who read it in Sou
 
 The dive is the **work** companion to the project's earlier thematic dive on [Christian anarchism](/research/) (the doctrine); it leans on Tolstoy's own diaries and the work's text, byte-checked, and attributes the genesis and publication facts to the Jubilee Edition's commentary.
 
-Full dive (cited index, machine-readable dossier, evidence ledger, and a proposed correction to the work record): `docs/research/1890-1893-the-kingdom-of-god-is-within-you/`.
+Full dive (cited index, machine-readable dossier, evidence ledger, and a proposed correction to the work record): `docs/research/works/non-fiction/treatises/1890-1893-the-kingdom-of-god-is-within-you/`.

@@ -22,6 +22,6 @@ A few things stood out.
 
 **Unlike most of the late work, it appeared in Russia — censored.** Its first printing was a partial, censored run in a Kyiv newspaper in February 1909; the complete text reached the public only abroad, through Chertkov's Free Age Press.
 
-The dive produced a cited [research write-up](../../../docs/research/1908-the-law-of-violence-and-the-law-of-love/index.html) and a machine-readable dossier, and — because this treatise has no record in the works database yet — a proposal to create one. As always, the dive plans the vault pages; it does not write them.
+The dive produced a cited [research write-up](../../../docs/research/works/non-fiction/treatises/1908-the-law-of-violence-and-the-law-of-love/index.html) and a machine-readable dossier, and — because this treatise has no record in the works database yet — a proposal to create one. As always, the dive plans the vault pages; it does not write them.
 
 *This is a draft note from an internal research process; it is not yet published.*

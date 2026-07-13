@@ -6,7 +6,7 @@ tags: [research, editorial]
 draft: false
 ---
 
-*Sessions 2026-05-27 → 2026-05-29. Reference document: `docs/research/biryukov-biography-editions/`. Per-volume verdict signed off 2026-05-29.*
+*Sessions 2026-05-27 → 2026-05-29. Reference document: `docs/research/_meta/biryukov-biography-editions/`. Per-volume verdict signed off 2026-05-29.*
 
 ---
 
@@ -98,7 +98,7 @@ Vol III and Vol IV's existing ledgers do not yet apply this discipline systemati
 
 ## Pointers
 
-- Reference document (per-volume verdict, full §1–§7): `docs/research/biryukov-biography-editions/index.md`
+- Reference document (per-volume verdict, full §1–§7): `docs/research/_meta/biryukov-biography-editions/index.md`
 - Session-by-session log: `session-log.md`
 - Aldanov 1921 review (transcribed + working English): `extracts/aldanov-1921-review-berlin-ladyzhnikov.md`
 - 2026-05-29 catalogue probe (transcript + URL tables): `extracts/digital-surrogate-hunt-2026-05-29.md`

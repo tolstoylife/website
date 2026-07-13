@@ -17,4 +17,4 @@ The dive pins the genesis from the diaries and letters (begun ~13 September 1903
 
 No `works/` record existed for the essay, so the dive proposes creating one.
 
-Read the full dive: [On Shakespeare and the Drama](https://… /docs/research/1903-1906-on-shakespeare-and-the-drama/) *(local: `docs/research/1903-1906-on-shakespeare-and-the-drama/index.md`)*.
+Read the full dive: [On Shakespeare and the Drama](https://… /docs/research/works/non-fiction/essays-and-criticism/1903-1906-on-shakespeare-and-the-drama/) *(local: `docs/research/works/non-fiction/essays-and-criticism/1903-1906-on-shakespeare-and-the-drama/index.md`)*.

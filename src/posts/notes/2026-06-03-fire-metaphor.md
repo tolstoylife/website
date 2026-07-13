@@ -17,4 +17,4 @@ Second, and this is the part to know before adopting fire as a mark: when Tolsto
 
 The whole argument is caught in one sentence — the credo that closes *What I Believe*, the same passage Biryukov chose to end volume II of his biography: faith is *"a fire which is only a fire when it burns,"* and the task is *"to live by the light that is in me, and set it not under a bushel."* Fire and light, fused, in Tolstoy's own confession.
 
-The full dive — every quotation checked byte-for-byte against the Jubilee Edition, with the keystone pages reproduced and the scholarship triangulated — is here: [Fire and light in Tolstoy](../../../../docs/research/fire-metaphor/index.html).
+The full dive — every quotation checked byte-for-byte against the Jubilee Edition, with the keystone pages reproduced and the scholarship triangulated — is here: [Fire and light in Tolstoy](../../../../docs/research/themes/fire-metaphor/index.html).

@@ -23,4 +23,4 @@ Where the corpus meets the scholarship (Alston's *Tolstoy and His Disciples*, 20
 
 Every Russian quotation is byte-checked against the extract files by a mechanical gate (`verify_quotes.py`) before any of it is written up — a discipline that earned its keep here: an earlier sitting of this dive was paused when the tool channel began producing plausible-but-fabricated Russian, and the gate is exactly what catches that.
 
-The full survey, with verbatim Russian, working English translations, a machine-readable dossier, and the keystone page facsimile, is in [`docs/research/tolstoyanism/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/tolstoyanism/index.md) (`index.md` and `dossier.yaml`).
+The full survey, with verbatim Russian, working English translations, a machine-readable dossier, and the keystone page facsimile, is in [`docs/research/themes/tolstoyanism/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/tolstoyanism/index.md) (`index.md` and `dossier.yaml`).

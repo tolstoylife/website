@@ -8,7 +8,7 @@ tags:
 draft: true
 ---
 
-New corpus dive: [Stories for the People (народные рассказы)](https://github.com/tolstoylife/tolstoy.life/tree/main/docs/research/stories-for-the-people) — a theme-dive across Tolstoy's folk tales of 1881–1887 and the Posrednik cheap-editions machinery that carried them.
+New corpus dive: [Stories for the People (народные рассказы)](https://github.com/tolstoylife/tolstoy.life/tree/main/docs/research/themes/stories-for-the-people) — a theme-dive across Tolstoy's folk tales of 1881–1887 and the Posrednik cheap-editions machinery that carried them.
 
 The primary record runs from the bylina-singer Shchegolyonok's 1879 visit (the oral source of three tales) through the operational letters to Chertkov — the «для народа» filter, the 1½-kopeck pricing, the instruction to Sytin to sell «как можно дешевле» — to the censors' verdicts (both «Чем люди живы» and «Иван-дурак» arrested in February 1887) and Tolstoy's late self-judgments.
 

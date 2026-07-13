@@ -14,4 +14,4 @@ The **preface to the works of Maupassant** (1893–94) turns out to be the treat
 
 The dive proposes a `works/` record for each (none existed), flags a real shelving gap — the schema has no "Prefaces" subcategory — and corrects the publisher of the 1898 English edition to The Brotherhood Publishing Company.
 
-Read the full dive, with the byte-faithful Russian and working translations: `docs/research/art-aesthetics-satellites/index.md`.
+Read the full dive, with the byte-faithful Russian and working translations: `docs/research/themes/art-aesthetics-satellites/index.md`.

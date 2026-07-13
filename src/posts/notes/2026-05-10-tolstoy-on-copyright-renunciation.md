@@ -6,7 +6,7 @@ tags: [design]
 draft: false
 ---
 
-*Session of 2026-05-10. Output: [`docs/research/copyright-renunciation/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/copyright-renunciation/index.md).*
+*Session of 2026-05-10. Output: [`docs/research/themes/copyright-renunciation/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/copyright-renunciation/index.md).*
 
 ---
 
@@ -27,7 +27,7 @@ The keyword sweep was layered, from high-confidence anchors to broader terms use
 
 Filename convention encodes the citation: `vXX_NNN_..._YYYY_MM_DD.xml` for diaries, `vXX_NNN_<addressee>.xml` for letters. Every hit comes pre-citationed with its PSS Tom number and, for diaries, the exact date.
 
-The TEI body markup is heavily editorial — `<choice>/<sic>/<corr>` wrappers for orthographic corrections, `<note>` footnote bodies inline. A small lxml-based extractor was written to resolve these to readable Russian prose suitable for grep with context. It lives next to the research essay at [`docs/research/copyright-renunciation/extract_tei.py`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/lib/extract_tei.py). The extracted text matches the printed PSS modulo the orthographic conventions of 1953 typesetting.
+The TEI body markup is heavily editorial — `<choice>/<sic>/<corr>` wrappers for orthographic corrections, `<note>` footnote bodies inline. A small lxml-based extractor was written to resolve these to readable Russian prose suitable for grep with context. It lives next to the research essay at [`docs/research/themes/copyright-renunciation/extract_tei.py`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/lib/extract_tei.py). The extracted text matches the printed PSS modulo the orthographic conventions of 1953 typesetting.
 
 ## What the corpus contains
 
@@ -42,7 +42,7 @@ The sweep returned approximately 60 letters and 25 diary entries directly on cop
 | 1909–1910 | Six successive formal wills drafted to find a legally binding form for the renunciation. | Toms 80, 82 |
 | 1910 (Jul) | Explanatory Note to the Will. Most legally precise statement; the document that finally made the renunciation binding. | Tom 82, pp. 227–231 |
 
-The full citation map of letters, diaries, polemical works, and notebooks is in [§3 of the research essay](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/copyright-renunciation/index.md#3-where-the-theme-clusters-in-the-jubilee-edition).
+The full citation map of letters, diaries, polemical works, and notebooks is in [§3 of the research essay](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/copyright-renunciation/index.md#3-where-the-theme-clusters-in-the-jubilee-edition).
 
 ## Three details from the sweep
 
@@ -58,9 +58,9 @@ The longest first-person passage on the subject — and the one written in plain
 
 ## Cross-check against the printed Jubilee Edition
 
-The finalist passage was verified against the printed Jubilee Edition. The relevant volume is PSS Tom 53; the local copy is at `primary-sources/jubilee-edition/vol19/vol19.pdf`. The local PDFs are named in chronological publication-order (1928–1958), not by Tom number — the lookup table is at [`docs/research/pss-volume-mapping.md`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/pss-volume-mapping.md).
+The finalist passage was verified against the printed Jubilee Edition. The relevant volume is PSS Tom 53; the local copy is at `primary-sources/jubilee-edition/vol19/vol19.pdf`. The local PDFs are named in chronological publication-order (1928–1958), not by Tom number — the lookup table is at [`docs/research/_meta/pss-volume-mapping.md`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/_meta/pss-volume-mapping.md).
 
-Pages 14–18 of Tom 53 were extracted at 220 dpi (`pdftoppm`) to `docs/research/copyright-renunciation/extracts/pss-vol53-pages/page-052.png` through `page-056.png`. The will section is on printed p. 16 = PDF page 54. The Russian text in the printed PSS matches the TEI extract; the operative line *То, что сочинения мои продавались…* is visible on `page-054.png`.
+Pages 14–18 of Tom 53 were extracted at 220 dpi (`pdftoppm`) to `docs/research/themes/copyright-renunciation/extracts/pss-vol53-pages/page-052.png` through `page-056.png`. The will section is on printed p. 16 = PDF page 54. The Russian text in the printed PSS matches the TEI extract; the operative line *То, что сочинения мои продавались…* is visible on `page-054.png`.
 
 ## The manuscript page
 
@@ -90,6 +90,6 @@ The sweep did not cover:
 
 ## What this feeds into
 
-The output of the session is the reference document at [`docs/research/copyright-renunciation/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/copyright-renunciation/index.md), which the splash-page editorial work draws from for Section 7, and which any future research into Tolstoy's position on intellectual property can pick up from.
+The output of the session is the reference document at [`docs/research/themes/copyright-renunciation/`](https://github.com/tolstoylife/tolstoy.life/blob/main/docs/research/themes/copyright-renunciation/index.md), which the splash-page editorial work draws from for Section 7, and which any future research into Tolstoy's position on intellectual property can pick up from.
 
 The 1910 Explanatory Note to the Will provides the legal articulation of what tolstoy.life itself is, in plain terms — a public-domain successor to the renunciation. That line is now quoted in the project MANIFEST.

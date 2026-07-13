@@ -14,4 +14,4 @@ Then it reached Gandhi. Gandhi read it in London in 1909, asked permission to re
 
 Two complications keep the story honest. Gandhi's satyagraha — organised, mass, confrontational — was not Tolstoy's individual, anarchist withdrawal; the lever Gandhi pulled was not quite the one Tolstoy described. And the man the letter was actually written to, Tarak Nath Das, rejected it: he published an "Open Letter" in reply insisting that "resistance to despotism is the first of all human duties." The letter that shaped Gandhi failed with its addressee.
 
-Full dive, sources, and the proposed work record: [docs/research/1908-a-letter-to-a-hindu](../../../../docs/research/1908-a-letter-to-a-hindu/index.md).
+Full dive, sources, and the proposed work record: [docs/research/works/non-fiction/essays-and-criticism/1908-a-letter-to-a-hindu](../../../../docs/research/works/non-fiction/essays-and-criticism/1908-a-letter-to-a-hindu/index.md).

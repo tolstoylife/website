@@ -15,4 +15,4 @@ The dive's surprise is how early and how deliberately Tolstoy designed this. He 
 
 Published posthumously in 1911, the Moscow edition appeared with its sharpest anti-clerical and pro-sectarian passages cut by the censor; the simultaneous Berlin edition carried them whole. And its most famous afterlife — Robert Bresson's film *L'Argent* (1983), and again Aku Louhimies's *Frozen Land* (2005) — keeps only Part I, the chain of evil, and stops exactly where the redemption would begin. The half the films discard is the half the whole design exists to reach.
 
-Full dive, with the genesis diaries, the close-read, the redaction history, and the sources: [The Forged Coupon](../../../docs/research/1889-1904-the-forged-coupon/index.html).
+Full dive, with the genesis diaries, the close-read, the redaction history, and the sources: [The Forged Coupon](../../../docs/research/works/fiction/novellas/1889-1904-the-forged-coupon/index.html).

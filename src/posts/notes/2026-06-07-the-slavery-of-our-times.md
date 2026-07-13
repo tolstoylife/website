@@ -14,4 +14,4 @@ It is the work in which Tolstoy is closest to the socialists, the Georgists and 
 
 Banned in Russia, it was published first by Chertkov's Free Word press in England in 1900 and translated by Aylmer Maude the same year; at home a newspaper that set the first chapters was threatened with closure, and the full Russian text waited until 1917.
 
-The full dive — argument, genesis, the redactions and the de-named first draft, the publication and censorship history, the visual record, and the scholarly context — is here: [The Slavery of Our Times — a corpus work-dive](../../../../docs/research/1900-the-slavery-of-our-times/index.md).
+The full dive — argument, genesis, the redactions and the de-named first draft, the publication and censorship history, the visual record, and the scholarly context — is here: [The Slavery of Our Times — a corpus work-dive](../../../../docs/research/works/non-fiction/treatises/1900-the-slavery-of-our-times/index.md).

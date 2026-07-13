@@ -14,4 +14,4 @@ Second, the politics is not incidental. Tolstoy said he built *Круг чтен
 
 These six are also the slot English readers never met — the only English *Круг чтения* drops all 52 weekly stories, and five of the six had no English translation until 2000.
 
-Full dive, with the byte-faithful Russian and working English of every passage, the genesis and censorship record, and the proposed works records: **[The народный рассказ in Круг чтения — Tolstoy's 1905–06 weekly-reading tales](../../../../docs/research/1905-1906-krug-chtenija-tales/index.md)**.
+Full dive, with the byte-faithful Russian and working English of every passage, the genesis and censorship record, and the proposed works records: **[The народный рассказ in Круг чтения — Tolstoy's 1905–06 weekly-reading tales](../../../../docs/research/themes/krug-chtenija-tales/index.md)**.

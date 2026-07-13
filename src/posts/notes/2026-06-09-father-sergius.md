@@ -23,4 +23,4 @@ A few things the primary record makes plain:
 
 The verdict on the dive's central question — that the work is about pride, not lust — is *confirms and extends*. Unusually, the mainstream already reads it this way; the dive's contribution is to ground that reading in Tolstoy's own letters from the writing years, which the criticism rarely cites.
 
-Full dive, with the byte-verified quotations, the redaction history, the character routing, and the visual record: [docs/research/1890-1898-father-sergius](../../../../docs/research/1890-1898-father-sergius/index.md).
+Full dive, with the byte-verified quotations, the redaction history, the character routing, and the visual record: [docs/research/works/fiction/novellas/1890-1898-father-sergius](../../../../docs/research/works/fiction/novellas/1890-1898-father-sergius/index.md).

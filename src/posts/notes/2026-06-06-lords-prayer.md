@@ -26,4 +26,4 @@ The Swedish rendering uses the traditional *Fader vår, som är i himmelen* as i
 > Mina forna misstag, utplåna och stryk ut dem, såsom ock jag utplånar och stryker ut alla mina bröders misstag, så att jag icke faller i frestelse, utan varder frälst ifrån ondo.
 > Ty din är makten och kraften, och ditt är avgörandet.
 
-The full dive — the four Russian renderings extracted and byte-verified, the twelve-fold correspondence in Swedish, the editorial choices flagged, and the text-critical pedigree of the Luke variant — is here: [Tolstoy's Lord's Prayer](../../../../docs/research/lords-prayer/index.html). It is a follow-up to [Tolstoy and the Gospels](../../../../docs/research/gospel-translation/index.html).
+The full dive — the four Russian renderings extracted and byte-verified, the twelve-fold correspondence in Swedish, the editorial choices flagged, and the text-critical pedigree of the Luke variant — is here: [Tolstoy's Lord's Prayer](../../../../docs/research/themes/lords-prayer/index.html). It is a follow-up to [Tolstoy and the Gospels](../../../../docs/research/themes/gospel-translation/index.html).
