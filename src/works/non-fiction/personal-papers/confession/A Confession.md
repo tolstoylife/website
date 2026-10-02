@@ -1,14 +1,15 @@
 ---
 # ELEVENTY — derived from schema, do not edit
-title: Confession
-description: Confession
+title: A Confession
+description: A Confession
 titleRu: Исповедь
 
 # GENERATED — do not edit below this line
 id: confession
 recordStatus: draft
-titleEn: Confession
-titleAlternatives: []
+titleEn: A Confession
+titleAlternatives:
+  - Confession
 mainCategory: Non-Fiction
 subcategory: Personal Papers
 genre: essay

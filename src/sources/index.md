@@ -40,7 +40,7 @@ Last updated: 2026-04-13
 
 ## Works — Non-Fiction
 
-- [[Confession]] — Essay on spiritual crisis and search for faith, status: draft
+- [[A Confession]] — Essay on spiritual crisis and search for faith, status: draft
 - [[The Kingdom of God Is Within You]] — Philosophical treatise on nonresistance to evil, status: draft
 - [[Bethink Yourselves!]] — Anti-war essay, Russo-Japanese War (1904), status: draft
 - [[What Is Art?]] — Essay on aesthetics and the purpose of art, status: draft
